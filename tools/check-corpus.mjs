@@ -36,7 +36,7 @@ import { createHash } from 'node:crypto'
 import { readFileSync, existsSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { extract } from './corpus-lib.mjs'
+import { extract, entriesOf } from './corpus-lib.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const frozen = resolve(root, 'data/devlog.md')
@@ -106,6 +106,36 @@ if (drift.length > 0) {
   )
 } else {
   console.log(`  ok      ${fresh.entries.length} entries and ${fresh.modes.length} modes recompute to exactly what is committed`)
+}
+
+/*
+ * And the entry text, which is a second generated file from the same source.
+ *
+ * It exists because the bodies are 316 KB and the grid does not need them, so
+ * they are fetched on a click instead of inlined. A split like that is a second
+ * thing that can go stale, and it did, within ten minutes of being written: the
+ * corpus was restored to the committed freeze and `entries.json` was left
+ * holding the bodies of a longer one. Nothing would have said so. The page would
+ * have opened entry 108 and shown the text of an entry the grid does not have.
+ */
+const committedBodies = JSON.parse(readFileSync(resolve(root, 'src/generated/entries.json'), 'utf8'))
+const freshBodies = entriesOf(readFileSync(frozen, 'utf8')).map((e) => e.body)
+
+if (committedBodies.length !== freshBodies.length) {
+  fail(
+    `src/generated/entries.json holds ${committedBodies.length} entries and the log has ${freshBodies.length}`,
+    'Run npm run build:corpus. The grid and the text a click opens come from one file.',
+  )
+} else {
+  const differ = freshBodies.filter((b, i) => b !== committedBodies[i]).length
+  if (differ > 0) {
+    fail(
+      `${differ} of ${freshBodies.length} entry bodies differ from the committed log`,
+      'The count matched and the text did not, which is the worse half of this failure.',
+    )
+  } else {
+    console.log(`  ok      ${committedBodies.length} entry bodies are the text of the committed log`)
+  }
 }
 
 /*

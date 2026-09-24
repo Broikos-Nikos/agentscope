@@ -38,7 +38,7 @@ import { createHash } from 'node:crypto'
 import { copyFileSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { MODES, extract } from './corpus-lib.mjs'
+import { MODES, extract, entriesOf } from './corpus-lib.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const LIVE = resolve(root, '../../DEVLOG.md')
@@ -62,10 +62,26 @@ corpus.source = {
   why: 'The live log grows every tick. A number measured from a moving file is a number about a document that no longer exists.',
 }
 
+/*
+ * The bodies go in their own file, fetched when a reader opens an entry.
+ *
+ * Measured before deciding: 316 KB of entry text, median 2.7 KB, largest 7.0 KB.
+ * Inlining all of it would put a third of a megabyte into the first paint of a
+ * page whose first paint is a grid of marks, and a reader who never opened one
+ * would have downloaded the entire development log to look at a picture.
+ *
+ * So `corpus.json` carries what the grid needs and `entries.json` carries what a
+ * click needs. Both are committed and both are checked, so this is a split
+ * rather than a shortcut.
+ */
+const bodies = entriesOf(text).map((e) => e.body)
+writeFileSync(resolve(root, 'src/generated/entries.json'), JSON.stringify(bodies) + String.fromCharCode(10))
+
 writeFileSync(resolve(root, 'src/generated/corpus.json'), JSON.stringify(corpus, null, 2) + '\n')
 
 console.log(`data/devlog.md            ${(corpus.source.bytes / 1024).toFixed(0)} KB, sha256 ${sha256.slice(0, 16)}...`)
 console.log(`src/generated/corpus.json ${corpus.entries.length} entries, ${corpus.modes.length} modes`)
+console.log(`src/generated/entries.json ${(JSON.stringify(bodies).length / 1024).toFixed(0)} KB of entry text, fetched on a click`)
 for (const m of corpus.modes) {
   console.log(`  ${String(m.entries).padStart(3)} entries, ${String(m.replayable).padStart(3)} with a run   ${m.id}`)
 }

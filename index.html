@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An agent kept a development log for five days and 108 entries. Six failure modes recur in it, every one with a run behind it, and it wrote each one down as a lesson before making it again."
+    />
+    <!--
+      Inline, so there is no second request and no 404 in the console of the
+      first person who opens it. Six rows of marks, which is the thing this
+      site draws.
+    -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23080604'/%3E%3Cg fill='%239a8f88'%3E%3Crect x='2' y='3' width='2' height='2'/%3E%3Crect x='7' y='3' width='2' height='2'/%3E%3Crect x='2' y='7' width='2' height='2'/%3E%3Crect x='11' y='7' width='2' height='2'/%3E%3Crect x='7' y='11' width='2' height='2'/%3E%3C/g%3E%3Crect x='11' y='11' width='2' height='2' fill='%23ff6a00'/%3E%3C/svg%3E"
+    />
+    <title>agentscope</title>
+  </head>
+  <body>
+    <header>
+      <p class="wordmark">AGENTSCOPE</p>
+      <h1 data-headline></h1>
+      <p class="standfirst" data-standfirst></p>
+    </header>
+
+    <main>
+      <!--
+        One control, and one only. A reader is choosing which failure to look at,
+        and everything else on this page is a consequence of that choice.
+      -->
+      <nav class="modes" data-modes aria-label="failure modes"></nav>
+
+      <p class="status" data-status>loading</p>
+
+      <noscript>
+        <style>
+          [data-status], .modes, .grid { display: none }
+        </style>
+        <p class="status">
+          This page draws a development log as a grid you can pick through, so it
+          needs javascript to do anything. Every number it draws is in the README,
+          which needs none.
+        </p>
+      </noscript>
+
+      <!--
+        Six rows, not one. Measured before it was drawn: 7 of the 43 entries that
+        carry a mode carry two or more, so a single mark in a single colour would
+        be wrong about 16% of the marks it drew.
+      -->
+      <section class="grid" data-grid></section>
+
+      <p class="caption" data-caption></p>
+
+      <!-- What a click opens: the real entry, not a summary of it. -->
+      <article class="entry" data-entry hidden></article>
+    </main>
+
+    <footer data-footer></footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

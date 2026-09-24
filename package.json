@@ -12,14 +12,16 @@
     "check": "npm run check:source && npm run check:corpus",
     "check:source": "node tools/check-source.mjs",
     "check:corpus": "node tools/check-corpus.mjs",
-    "build:corpus": "node tools/build-corpus.mjs"
+    "build:corpus": "node tools/build-corpus.mjs",
+    "check:page": "node tools/check-page.mjs",
+    "verify": "node tools/verify.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.13.6",
-    "playwright": "1.61.1",
+    "playwright": "^1.61.1",
     "tsx": "4.20.6",
-    "typescript": "5.9.3",
-    "vite": "8.3.0"
+    "typescript": "^5.9.3",
+    "vite": "^8.3.0"
   },
   "allowScripts": {
     "esbuild@0.25.12": true,
