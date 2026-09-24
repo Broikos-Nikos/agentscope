@@ -61,7 +61,24 @@ for (const [path, name] of [
 
 const committed = JSON.parse(readFileSync(generated, 'utf8'))
 const bytes = readFileSync(frozen)
-const sha256 = createHash('sha256').update(bytes).digest('hex')
+/*
+ * The size a clone sees, not the size this checkout has, and floored rather
+ * than rounded because `check:claims` floors it and the README carries the
+ * result. Two roundings of one number is how `evalkit` shipped a headline of
+ * 177 over a library that said 178, with nine assertions green.
+ */
+const normalisedBytes = Buffer.byteLength(bytes.toString('utf8').replace(/\r\n/g, '\n'), 'utf8')
+/*
+ * The hash of the text, not of the bytes on this disk. Git stores text with LF
+ * and checks it out with CRLF wherever `core.autocrlf` is on, which is the
+ * default on Windows, so the same committed file has two sha256 values
+ * depending on who cloned it. This project's own input hashed one way here and
+ * another in a fresh clone, and the gate below would have failed on every
+ * machine except the one that wrote it, CI included. Normalising first makes
+ * the value a property of the document rather than of the checkout.
+ */
+const textSha = (buf) => createHash('sha256').update(buf.toString('utf8').replace(/\r\n/g, '\n'), 'utf8').digest('hex')
+const sha256 = textSha(bytes)
 
 // 2, first, because if the source moved then every count below is answering a
 // question about a file that is not there any more.
@@ -71,11 +88,11 @@ if (!committed.source?.sha256) {
   fail(
     'data/devlog.md is not the file the corpus was measured from',
     `recorded ${committed.source.sha256.slice(0, 16)}..., on disk ${sha256.slice(0, 16)}...\n` +
-      `      Recorded ${committed.source.bytes} bytes, on disk ${bytes.length}.\n` +
+      `      Recorded ${committed.source.bytes} bytes, on disk ${normalisedBytes}.\n` +
       '      Either restore the file or run npm run build:corpus and update every number that moved.',
   )
 } else {
-  console.log(`  ok      data/devlog.md is the ${(bytes.length / 1024).toFixed(0)} KB frozen on ${committed.source.frozen}, sha256 ${sha256.slice(0, 16)}...`)
+  console.log(`  ok      data/devlog.md is the ${Math.floor(normalisedBytes / 1024)} KB frozen on ${committed.source.frozen}, sha256 ${sha256.slice(0, 16)}...`)
 }
 
 // 1. The same extraction, run again, against the same source.

@@ -64,7 +64,7 @@ before its recurrences become visible at all.
 
 ## The corpus
 
-`data/devlog.md`, 326 KB, committed, with its sha256 and the date it was frozen.
+`data/devlog.md`, 319 KB, committed, with its sha256 and the date it was frozen.
 
 It is committed because it has to be. The first measuring tool for this project
 read the live log, and its committed counts were stale nineteen minutes later
@@ -92,7 +92,7 @@ npm run build       # typecheck, three file gates, then the bundle
 npm run verify      # the browser gates against one shared server
 ```
 
-The page costs **8 KB** to look at. The 326 KB of entry text is a separate
+The page costs **8 KB** to look at. The 319 KB of entry text is a separate
 chunk, fetched the first time you open an entry, so a reader who only looks at
 the picture never downloads the log.
 

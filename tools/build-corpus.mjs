@@ -50,7 +50,21 @@ mkdirSync(resolve(root, 'src/generated'), { recursive: true })
 copyFileSync(LIVE, FROZEN)
 
 const text = readFileSync(FROZEN, 'utf8')
-const sha256 = createHash('sha256').update(readFileSync(FROZEN)).digest('hex')
+/*
+ * The hash of the text, not of the bytes on this disk. Git stores text with LF
+ * and checks it out with CRLF wherever `core.autocrlf` is on, which is the
+ * default on Windows, so the same committed file has two sha256 values
+ * depending on who cloned it. This project's own input hashed one way here and
+ * another in a fresh clone, and the gate below would have failed on every
+ * machine except the one that wrote it, CI included. Normalising first makes
+ * the value a property of the document rather than of the checkout.
+ */
+const normalise = (buf) => buf.toString('utf8').replace(/\r\n/g, '\n')
+const textSha = (buf) => createHash('sha256').update(normalise(buf), 'utf8').digest('hex')
+/* The size of the document too, for the same reason: 334,255 bytes on this
+ * disk against 327,443 in a clone is the same file, and the README quotes it. */
+const textBytes = (buf) => Buffer.byteLength(normalise(buf), 'utf8')
+const sha256 = textSha(readFileSync(FROZEN))
 
 const corpus = extract(text)
 corpus.source = {
@@ -58,7 +72,7 @@ corpus.source = {
   file: 'data/devlog.md',
   frozen: new Date().toISOString().slice(0, 10),
   sha256,
-  bytes: readFileSync(FROZEN).length,
+  bytes: textBytes(readFileSync(FROZEN)),
   why: 'The live log grows every tick. A number measured from a moving file is a number about a document that no longer exists.',
 }
 

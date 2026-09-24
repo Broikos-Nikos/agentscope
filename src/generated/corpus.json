@@ -1166,8 +1166,8 @@
     "what": "The development log of the workspace that built this project and its siblings.",
     "file": "data/devlog.md",
     "frozen": "2026-09-24",
-    "sha256": "67116296e9b6a5052b91cd3d35a62aecfb11156814a0117d93e0c01587d614a6",
-    "bytes": 334255,
+    "sha256": "c9fff21422b7fbaeee4c9fa06575d1d0644c04992f3c607f05f202a6c639725e",
+    "bytes": 327443,
     "why": "The live log grows every tick. A number measured from a moving file is a number about a document that no longer exists."
   }
 }
