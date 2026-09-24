@@ -1,0 +1,1173 @@
+{
+  "entries": [
+    {
+      "heading": "2026-09-20 23:41 | tick 0 | workspace | Scaffolding",
+      "tick": 0,
+      "date": "2026-09-20",
+      "bytes": 1158,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "2026-09-20 23:58 | tick 1 | tokenlab | Built it, measured it, looked at it",
+      "tick": 1,
+      "date": "2026-09-20",
+      "bytes": 3577,
+      "hasRun": true,
+      "commits": [
+        "4d10e4b"
+      ]
+    },
+    {
+      "heading": "2026-09-20 23:58 | tick 2 | watch-it-think | The weights question, answered",
+      "tick": 2,
+      "date": "2026-09-20",
+      "bytes": 1936,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "2026-09-21 00:03 | tick 3 | watch-it-think | The router is out of PyTorch and into a graph",
+      "tick": 3,
+      "date": "2026-09-21",
+      "bytes": 2806,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "2026-09-21 00:22 | tick 4 | tokenlab | Every high finding closed",
+      "tick": 4,
+      "date": "2026-09-21",
+      "bytes": 4743,
+      "hasRun": true,
+      "commits": [
+        "a8631e1"
+      ]
+    },
+    {
+      "heading": "2026-09-21 00:23 | contract | LOOP-PROMPT.md v2",
+      "tick": null,
+      "date": "2026-09-21",
+      "bytes": 1992,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "2026-09-21 00:30 | tick 5 | tokenlab | The claim checker",
+      "tick": 5,
+      "date": "2026-09-21",
+      "bytes": 2029,
+      "hasRun": true,
+      "commits": [
+        "e984572"
+      ]
+    },
+    {
+      "heading": "2026-09-21 01:06 | tick 6 | tokenlab | The recording",
+      "tick": 6,
+      "date": "2026-09-21",
+      "bytes": 3508,
+      "hasRun": true,
+      "commits": [
+        "7a0cdb8"
+      ]
+    },
+    {
+      "heading": "2026-09-21 01:30 | tick 7 | tokenlab | The corpus stops lying about itself",
+      "tick": 7,
+      "date": "2026-09-21",
+      "bytes": 2949,
+      "hasRun": true,
+      "commits": [
+        "b8e8f24"
+      ]
+    },
+    {
+      "heading": "2026-09-21 01:45 | tick 8 | watch-it-think | int8, and what it cost",
+      "tick": 8,
+      "date": "2026-09-21",
+      "bytes": 2931,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "2026-09-21 02:20 | tick 9 | tokenlab | Draw the text that was typed",
+      "tick": 9,
+      "date": "2026-09-21",
+      "bytes": 3451,
+      "hasRun": true,
+      "commits": [
+        "58414ff"
+      ]
+    },
+    {
+      "heading": "2026-09-21 03:00 | tick 10 | tokenlab | Make the checker actually look",
+      "tick": 10,
+      "date": "2026-09-21",
+      "bytes": 2778,
+      "hasRun": true,
+      "commits": [
+        "3fac693"
+      ]
+    },
+    {
+      "heading": "2026-09-21 03:30 | tick 11 | tokenlab | The network misbehaving",
+      "tick": 11,
+      "date": "2026-09-21",
+      "bytes": 4004,
+      "hasRun": true,
+      "commits": [
+        "823a78f"
+      ]
+    },
+    {
+      "heading": "2026-09-21 04:00 | tick 12 | watch-it-think | The tokenizer port, held to id for id",
+      "tick": 12,
+      "date": "2026-09-21",
+      "bytes": 2812,
+      "hasRun": true,
+      "commits": [
+        "22c9d44"
+      ]
+    },
+    {
+      "heading": "2026-09-21 04:10 | tick 12b | tokenlab | Recruiter audit folded, and one regression repaired",
+      "tick": 12,
+      "date": "2026-09-21",
+      "bytes": 2707,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "2026-09-21 04:30 | tick 13 | tokenlab | The first screen, for a stranger",
+      "tick": 13,
+      "date": "2026-09-21",
+      "bytes": 2788,
+      "hasRun": true,
+      "commits": [
+        "2903e64"
+      ]
+    },
+    {
+      "heading": "2026-09-21 05:00 | tick 14 | tokenlab | The page and the README stop disagreeing",
+      "tick": 14,
+      "date": "2026-09-21",
+      "bytes": 2645,
+      "hasRun": true,
+      "commits": [
+        "01b11e3"
+      ]
+    },
+    {
+      "heading": "2026-09-21 05:30 | tick 15 | tokenlab | The measurement stops depending on the clock",
+      "tick": 15,
+      "date": "2026-09-21",
+      "bytes": 2323,
+      "hasRun": true,
+      "commits": [
+        "392326b"
+      ]
+    },
+    {
+      "heading": "2026-09-21 06:00 | tick 16 | watch-it-think | The exporter question, answered by running it",
+      "tick": 16,
+      "date": "2026-09-21",
+      "bytes": 2971,
+      "hasRun": true,
+      "commits": [
+        "fc4c011"
+      ]
+    },
+    {
+      "heading": "2026-09-21 06:30 | tick 17 | tokenlab | An interval on the number this project leads with",
+      "tick": 17,
+      "date": "2026-09-21",
+      "bytes": 2779,
+      "hasRun": true,
+      "commits": [
+        "4968760"
+      ]
+    },
+    {
+      "heading": "2026-09-21 07:00 | tick 18 | tokenlab | The fourth gate runs now",
+      "tick": 18,
+      "date": "2026-09-21",
+      "bytes": 3194,
+      "hasRun": true,
+      "commits": [
+        "822df43"
+      ]
+    },
+    {
+      "heading": "2026-09-21 07:30 | tick 19 | tokenlab | The log resolves, and verify runs itself",
+      "tick": 19,
+      "date": "2026-09-21",
+      "bytes": 3373,
+      "hasRun": true,
+      "commits": [
+        "a8631e1",
+        "1502de1"
+      ]
+    },
+    {
+      "heading": "2026-09-21 08:00 | tick 20 | watch-it-think | It runs in a browser",
+      "tick": 20,
+      "date": "2026-09-21",
+      "bytes": 2718,
+      "hasRun": true,
+      "commits": [
+        "6f7d9a1"
+      ]
+    },
+    {
+      "heading": "2026-09-21 08:30 | tick 21 | tokenlab | The gates were all pointed at one file",
+      "tick": 21,
+      "date": "2026-09-21",
+      "bytes": 3318,
+      "hasRun": true,
+      "commits": [
+        "fc30b75"
+      ]
+    },
+    {
+      "heading": "2026-09-21 09:00 | tick 22 | tokenlab | Four lists become one, and a comment becomes a gate",
+      "tick": 22,
+      "date": "2026-09-21",
+      "bytes": 3304,
+      "hasRun": true,
+      "commits": [
+        "3c708a7"
+      ]
+    },
+    {
+      "heading": "2026-09-21 09:30 | tick 23 | tokenlab | The red chips are asserted now",
+      "tick": 23,
+      "date": "2026-09-21",
+      "bytes": 3493,
+      "hasRun": true,
+      "commits": [
+        "2d754f9"
+      ]
+    },
+    {
+      "heading": "2026-09-21 10:00 | tick 24 | watch-it-think | The attention field",
+      "tick": 24,
+      "date": "2026-09-21",
+      "bytes": 2984,
+      "hasRun": true,
+      "commits": [
+        "e88cfc9"
+      ]
+    },
+    {
+      "heading": "2026-09-21 10:30 | tick 25 | tokenlab | The fonts are under two different licences",
+      "tick": 25,
+      "date": "2026-09-21",
+      "bytes": 3207,
+      "hasRun": true,
+      "commits": [
+        "42bf3b7"
+      ]
+    },
+    {
+      "heading": "2026-09-21 11:00 | tick 26 | tokenlab | Only the job that deploys can deploy",
+      "tick": 26,
+      "date": "2026-09-21",
+      "bytes": 3094,
+      "hasRun": true,
+      "commits": [
+        "d7f4dfa"
+      ]
+    },
+    {
+      "heading": "2026-09-21 11:30 | tick 27 | tokenlab | The opening stops waiting for the vocabulary",
+      "tick": 27,
+      "date": "2026-09-21",
+      "bytes": 2738,
+      "hasRun": true,
+      "commits": [
+        "7ab305c"
+      ]
+    },
+    {
+      "heading": "2026-09-21 12:00 | tick 28 | tokenlab | The polish pass, and the last task",
+      "tick": 28,
+      "date": "2026-09-21",
+      "bytes": 3131,
+      "hasRun": true,
+      "commits": [
+        "4f46dbb"
+      ]
+    },
+    {
+      "heading": "2026-09-21 12:30 | tick 29 | watch-it-think | The export could not be run",
+      "tick": 29,
+      "date": "2026-09-21",
+      "bytes": 3025,
+      "hasRun": true,
+      "commits": [
+        "9bc2bb4"
+      ]
+    },
+    {
+      "heading": "2026-09-21 13:00 | tick 30 | watch-it-think | The attention gets a witness",
+      "tick": 30,
+      "date": "2026-09-21",
+      "bytes": 2567,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 31, 2026-09-21 13:38",
+      "tick": 31,
+      "date": "2026-09-21",
+      "bytes": 3554,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 32, 2026-09-21 14:18",
+      "tick": 32,
+      "date": "2026-09-21",
+      "bytes": 4989,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 33, 2026-09-21 14:36",
+      "tick": 33,
+      "date": "2026-09-21",
+      "bytes": 4120,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 34, 2026-09-21 15:07",
+      "tick": 34,
+      "date": "2026-09-21",
+      "bytes": 5035,
+      "hasRun": true,
+      "commits": [
+        "50aafae"
+      ]
+    },
+    {
+      "heading": "Tick 35, 2026-09-21 15:34",
+      "tick": 35,
+      "date": "2026-09-21",
+      "bytes": 4165,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 36, 2026-09-21 16:29",
+      "tick": 36,
+      "date": "2026-09-21",
+      "bytes": 3927,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 37, 2026-09-21 16:34",
+      "tick": 37,
+      "date": "2026-09-21",
+      "bytes": 3678,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 38, 2026-09-21 17:09",
+      "tick": 38,
+      "date": "2026-09-21",
+      "bytes": 4348,
+      "hasRun": true,
+      "commits": [
+        "4ce5329"
+      ]
+    },
+    {
+      "heading": "Tick 39, 2026-09-21 17:34",
+      "tick": 39,
+      "date": "2026-09-21",
+      "bytes": 2874,
+      "hasRun": true,
+      "commits": [
+        "fbbd3a0"
+      ]
+    },
+    {
+      "heading": "Tick 40, 2026-09-21 18:28",
+      "tick": 40,
+      "date": "2026-09-21",
+      "bytes": 2007,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 41, 2026-09-21 18:50, the release",
+      "tick": 41,
+      "date": "2026-09-21",
+      "bytes": 3504,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 42, 2026-09-21 19:34, first maintenance tick",
+      "tick": 42,
+      "date": "2026-09-21",
+      "bytes": 3319,
+      "hasRun": true,
+      "commits": [
+        "d4a0da7"
+      ]
+    },
+    {
+      "heading": "Tick 43, 2026-09-21 20:36",
+      "tick": 43,
+      "date": "2026-09-21",
+      "bytes": 3338,
+      "hasRun": true,
+      "commits": [
+        "d4a0da7"
+      ]
+    },
+    {
+      "heading": "Tick 44, 2026-09-21 21:41",
+      "tick": 44,
+      "date": "2026-09-21",
+      "bytes": 2845,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 45, 2026-09-21 22:34",
+      "tick": 45,
+      "date": "2026-09-21",
+      "bytes": 3108,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 46, 2026-09-21 23:37",
+      "tick": 46,
+      "date": "2026-09-21",
+      "bytes": 3377,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 47, 2026-09-22 00:35",
+      "tick": 47,
+      "date": "2026-09-22",
+      "bytes": 2558,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 48, 2026-09-22 01:46",
+      "tick": 48,
+      "date": "2026-09-22",
+      "bytes": 2880,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 49, 2026-09-22 02:34",
+      "tick": 49,
+      "date": "2026-09-22",
+      "bytes": 2549,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 50, 2026-09-22 03:36",
+      "tick": 50,
+      "date": "2026-09-22",
+      "bytes": 3100,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 51, 2026-09-22 04:36",
+      "tick": 51,
+      "date": "2026-09-22",
+      "bytes": 2839,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 52, 2026-09-22 05:49",
+      "tick": 52,
+      "date": "2026-09-22",
+      "bytes": 2635,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 53, 2026-09-22 06:37",
+      "tick": 53,
+      "date": "2026-09-22",
+      "bytes": 3175,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 54, 2026-09-22 07:41",
+      "tick": 54,
+      "date": "2026-09-22",
+      "bytes": 3186,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 55, 2026-09-22 08:35",
+      "tick": 55,
+      "date": "2026-09-22",
+      "bytes": 2649,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 56, 2026-09-22 09:32",
+      "tick": 56,
+      "date": "2026-09-22",
+      "bytes": 4555,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 57, 2026-09-22 10:36",
+      "tick": 57,
+      "date": "2026-09-22",
+      "bytes": 2467,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 58, 2026-09-22 11:35",
+      "tick": 58,
+      "date": "2026-09-22",
+      "bytes": 2721,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 59, 2026-09-22 12:35",
+      "tick": 59,
+      "date": "2026-09-22",
+      "bytes": 2809,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 60, 2026-09-22 13:50",
+      "tick": 60,
+      "date": "2026-09-22",
+      "bytes": 3647,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 61, 2026-09-22 14:35",
+      "tick": 61,
+      "date": "2026-09-22",
+      "bytes": 2469,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 62, 2026-09-22 15:34",
+      "tick": 62,
+      "date": "2026-09-22",
+      "bytes": 2738,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 63, 2026-09-22 16:39",
+      "tick": 63,
+      "date": "2026-09-22",
+      "bytes": 2624,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 64, 2026-09-22 17:58",
+      "tick": 64,
+      "date": "2026-09-22",
+      "bytes": 2902,
+      "hasRun": true,
+      "commits": [
+        "8488859"
+      ]
+    },
+    {
+      "heading": "Tick 65, 2026-09-22 18:35",
+      "tick": 65,
+      "date": "2026-09-22",
+      "bytes": 2404,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 66, 2026-09-22 19:36",
+      "tick": 66,
+      "date": "2026-09-22",
+      "bytes": 2287,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 67, 2026-09-22 20:42",
+      "tick": 67,
+      "date": "2026-09-22",
+      "bytes": 2246,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 68, 2026-09-22 21:40",
+      "tick": 68,
+      "date": "2026-09-22",
+      "bytes": 2868,
+      "hasRun": true,
+      "commits": [
+        "81b4d42",
+        "f8fdd8e"
+      ]
+    },
+    {
+      "heading": "Tick 69, 2026-09-22 22:36",
+      "tick": 69,
+      "date": "2026-09-22",
+      "bytes": 2188,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 70, 2026-09-22 23:31",
+      "tick": 70,
+      "date": "2026-09-22",
+      "bytes": 2523,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 71, 2026-09-23 00:25 to 01:05, a build day",
+      "tick": 71,
+      "date": "2026-09-23",
+      "bytes": 7166,
+      "hasRun": true,
+      "commits": [
+        "350e630"
+      ]
+    },
+    {
+      "heading": "Tick 72, 2026-09-23 01:25, the audit, by hand, against the live host",
+      "tick": 72,
+      "date": "2026-09-23",
+      "bytes": 4045,
+      "hasRun": true,
+      "commits": [
+        "350e630"
+      ]
+    },
+    {
+      "heading": "Tick 73, 2026-09-23 01:40, build day, ladder item 3",
+      "tick": 73,
+      "date": "2026-09-23",
+      "bytes": 3735,
+      "hasRun": true,
+      "commits": [
+        "350e630",
+        "e0c9f0a"
+      ]
+    },
+    {
+      "heading": "Tick 74, 2026-09-23 02:40, build day, ladder item 3",
+      "tick": 74,
+      "date": "2026-09-23",
+      "bytes": 2540,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 75, 2026-09-23 03:40, build day, ladder item 4",
+      "tick": 75,
+      "date": "2026-09-23",
+      "bytes": 2763,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 76, 2026-09-23 04:40, the audit, by hand, against the live page",
+      "tick": 76,
+      "date": "2026-09-23",
+      "bytes": 2547,
+      "hasRun": true,
+      "commits": [
+        "5284077"
+      ]
+    },
+    {
+      "heading": "Tick 77, 2026-09-23 05:40, build day, ladder item 3",
+      "tick": 77,
+      "date": "2026-09-23",
+      "bytes": 1874,
+      "hasRun": true,
+      "commits": [
+        "5284077"
+      ]
+    },
+    {
+      "heading": "Tick 78, 2026-09-23 06:40, build day, ladder item 4",
+      "tick": 78,
+      "date": "2026-09-23",
+      "bytes": 2831,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 79, 2026-09-23 07:40, build day, ladder item 4",
+      "tick": 79,
+      "date": "2026-09-23",
+      "bytes": 2626,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 80, 2026-09-23 08:40, the audit, by hand, against chunkline's numbers",
+      "tick": 80,
+      "date": "2026-09-23",
+      "bytes": 2757,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 81, 2026-09-23 09:40, build day, ladder items 2 and 4",
+      "tick": 81,
+      "date": "2026-09-23",
+      "bytes": 2774,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 82, 2026-09-23 10:40, build day, ladder item 2",
+      "tick": 82,
+      "date": "2026-09-23",
+      "bytes": 2344,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 83, 2026-09-23 11:40, build day, ladder item 5 and a gate that failed",
+      "tick": 83,
+      "date": "2026-09-23",
+      "bytes": 3268,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 84, 2026-09-23 12:40, the audit, by hand, over today's eight commits",
+      "tick": 84,
+      "date": "2026-09-23",
+      "bytes": 2366,
+      "hasRun": true,
+      "commits": [
+        "e95ea90",
+        "55ab3a5"
+      ]
+    },
+    {
+      "heading": "Tick 85, 2026-09-23 13:40, build day, ladder item 5",
+      "tick": 85,
+      "date": "2026-09-23",
+      "bytes": 2478,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 86, 2026-09-23 14:40, build day, ladder item 5",
+      "tick": 86,
+      "date": "2026-09-23",
+      "bytes": 2373,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 87, 2026-09-23 15:40, build day, ladder item 5",
+      "tick": 87,
+      "date": "2026-09-23",
+      "bytes": 2313,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 88, 2026-09-23 16:40, the audit, by hand, looking at the page",
+      "tick": 88,
+      "date": "2026-09-23",
+      "bytes": 2106,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 89, 2026-09-23 17:40, build day, ladder item 5",
+      "tick": 89,
+      "date": "2026-09-23",
+      "bytes": 2315,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 90, 2026-09-23 18:40, build day, the queue itself",
+      "tick": 90,
+      "date": "2026-09-23",
+      "bytes": 2560,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "Tick 91, 2026-09-24 11:04, REFINEMENT day, the first push",
+      "tick": 91,
+      "date": "2026-09-24",
+      "bytes": 2805,
+      "hasRun": true,
+      "commits": [
+        "b090561",
+        "e95ea90"
+      ]
+    },
+    {
+      "heading": "Tick 92, 2026-09-24 11:55, refinement day, the audit",
+      "tick": 92,
+      "date": "2026-09-24",
+      "bytes": 2062,
+      "hasRun": true,
+      "commits": [
+        "b090561"
+      ]
+    },
+    {
+      "heading": "Tick 93, 2026-09-24 12:21, refinement day, ladder item 4",
+      "tick": 93,
+      "date": "2026-09-24",
+      "bytes": 2296,
+      "hasRun": true,
+      "commits": [
+        "b090561"
+      ]
+    },
+    {
+      "heading": "Tick 94, 2026-09-24 13:21, refinement day, ladder item 5",
+      "tick": 94,
+      "date": "2026-09-24",
+      "bytes": 2605,
+      "hasRun": true,
+      "commits": [
+        "b090561",
+        "6364ef0"
+      ]
+    },
+    {
+      "heading": "Tick 95, 2026-09-24 14:30, the shape changed",
+      "tick": 95,
+      "date": "2026-09-24",
+      "bytes": 2984,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 96, 2026-09-24 14:00, chunkline, ladder item 5",
+      "tick": 96,
+      "date": "2026-09-24",
+      "bytes": 1614,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 96, addendum: the auditor's first pass",
+      "tick": 96,
+      "date": null,
+      "bytes": 1281,
+      "hasRun": true,
+      "commits": [
+        "6364ef0"
+      ]
+    },
+    {
+      "heading": "Tick 97, 2026-09-24 15:20, watch-it-think, ladder item 2",
+      "tick": 97,
+      "date": "2026-09-24",
+      "bytes": 2626,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 98, 2026-09-24 14:30, watch-it-think, ladder item 3",
+      "tick": 98,
+      "date": "2026-09-24",
+      "bytes": 2046,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 99, 2026-09-24 15:00, chunkline, ladder item 2",
+      "tick": 99,
+      "date": "2026-09-24",
+      "bytes": 2011,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "Tick 100, 2026-09-24 15:30, chunkline, ladder item 5, plus the day's last push",
+      "tick": 100,
+      "date": "2026-09-24",
+      "bytes": 1985,
+      "hasRun": true,
+      "commits": [
+        "6364ef0",
+        "c0c2297"
+      ]
+    },
+    {
+      "heading": "Tick 101, 2026-09-24 16:09, chunkline, ladder item 5",
+      "tick": 101,
+      "date": "2026-09-24",
+      "bytes": 3384,
+      "hasRun": false,
+      "commits": []
+    },
+    {
+      "heading": "2026-09-24 17:09, tick 102: the picture at the top, and the gate that keeps it honest",
+      "tick": 102,
+      "date": "2026-09-24",
+      "bytes": 5279,
+      "hasRun": true,
+      "commits": [
+        "e6797b6"
+      ]
+    },
+    {
+      "heading": "2026-09-24 17:19, tick 103: the ladder was reading from a queue nobody checked",
+      "tick": 103,
+      "date": "2026-09-24",
+      "bytes": 4498,
+      "hasRun": true,
+      "commits": []
+    },
+    {
+      "heading": "2026-09-24 17:50, tick 104: agentscope's spec, and the gate for it failed its own first control",
+      "tick": 104,
+      "date": "2026-09-24",
+      "bytes": 5641,
+      "hasRun": true,
+      "commits": [
+        "5c89d36"
+      ]
+    }
+  ],
+  "modes": [
+    {
+      "id": "stale-record",
+      "name": "The record that outlived what it described",
+      "mechanism": "A written down fact stays true in the file after it stops being true in the world: a number in prose, a picture of a page, a queue entry naming a defect that is fixed.",
+      "entries": 23,
+      "replayable": 13,
+      "firstSeen": "2026-09-21",
+      "at": [
+        3,
+        6,
+        15,
+        23,
+        58,
+        59,
+        62,
+        65,
+        70,
+        71,
+        72,
+        73,
+        75,
+        84,
+        87,
+        89,
+        92,
+        97,
+        98,
+        100,
+        104,
+        105,
+        106
+      ],
+      "runsAt": [
+        3,
+        6,
+        15,
+        23,
+        58,
+        59,
+        65,
+        70,
+        73,
+        75,
+        92,
+        105,
+        106
+      ]
+    },
+    {
+      "id": "corrupted-escape",
+      "name": "The escape that arrived as a byte",
+      "mechanism": "Source is written through a heredoc or a nested quote and an escape is interpreted one layer too early, so a regex is compiled against an invisible character it can never match.",
+      "entries": 10,
+      "replayable": 7,
+      "firstSeen": "2026-09-21",
+      "at": [
+        31,
+        33,
+        36,
+        38,
+        52,
+        56,
+        78,
+        91,
+        96,
+        107
+      ],
+      "runsAt": [
+        31,
+        36,
+        52,
+        56,
+        78,
+        96,
+        107
+      ]
+    },
+    {
+      "id": "masked-exit",
+      "name": "The exit code the shell threw away",
+      "mechanism": "A command fails and the caller never learns, because the status reported belongs to a pipe, a redirect, a grep that matched nothing, or the second half of an ||.",
+      "entries": 9,
+      "replayable": 7,
+      "firstSeen": "2026-09-21",
+      "at": [
+        31,
+        48,
+        49,
+        51,
+        63,
+        85,
+        88,
+        105,
+        107
+      ],
+      "runsAt": [
+        31,
+        48,
+        49,
+        51,
+        63,
+        105,
+        107
+      ]
+    },
+    {
+      "id": "green-control",
+      "name": "The control that passes against the broken code",
+      "mechanism": "A check written to prove a fix works is run against the defect and reports success, because it measures a proxy, or its condition cannot occur, or the artefact it tested was never rebuilt, or the claim is a bare number the document says elsewhere anyway.",
+      "entries": 5,
+      "replayable": 4,
+      "firstSeen": "2026-09-21",
+      "at": [
+        12,
+        79,
+        93,
+        104,
+        107
+      ],
+      "runsAt": [
+        12,
+        79,
+        93,
+        107
+      ]
+    },
+    {
+      "id": "orphaned-process",
+      "name": "The cleanup that could not run",
+      "mechanism": "A process is started and its kill is scheduled somewhere that cannot execute it, so it survives every run and accumulates until the machine refuses to start more.",
+      "entries": 4,
+      "replayable": 3,
+      "firstSeen": "2026-09-22",
+      "at": [
+        62,
+        65,
+        79,
+        105
+      ],
+      "runsAt": [
+        65,
+        79,
+        105
+      ]
+    },
+    {
+      "id": "unproved-server",
+      "name": "Measuring whatever answered",
+      "mechanism": "A check talks to a port rather than to something it started and proved, so an older server, a cached build or a different process answers and the measurement is of something nobody chose.",
+      "entries": 3,
+      "replayable": 2,
+      "firstSeen": "2026-09-21",
+      "at": [
+        21,
+        62,
+        65
+      ],
+      "runsAt": [
+        21,
+        65
+      ]
+    }
+  ],
+  "totals": {
+    "modes": 6,
+    "ticks": 107,
+    "highestTick": 104,
+    "firstDate": "2026-09-20",
+    "lastDate": "2026-09-24",
+    "entriesTouchingAnyMode": 43,
+    "modesWithTwoOrMoreRuns": 6,
+    "allModesFrom": 80,
+    "stability": [
+      {
+        "entries": 30,
+        "modes": 1
+      },
+      {
+        "entries": 50,
+        "modes": 3
+      },
+      {
+        "entries": 70,
+        "modes": 4
+      },
+      {
+        "entries": 90,
+        "modes": 6
+      },
+      {
+        "entries": 108,
+        "modes": 6
+      }
+    ]
+  },
+  "source": {
+    "what": "The development log of the workspace that built this project and its siblings.",
+    "file": "data/devlog.md",
+    "frozen": "2026-09-24",
+    "sha256": "67116296e9b6a5052b91cd3d35a62aecfb11156814a0117d93e0c01587d614a6",
+    "bytes": 334255,
+    "why": "The live log grows every tick. A number measured from a moving file is a number about a document that no longer exists."
+  }
+}
