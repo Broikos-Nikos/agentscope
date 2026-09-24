@@ -9,12 +9,15 @@
     "build": "tsc --noEmit && npm run check && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "check": "npm run check:source && npm run check:corpus",
+    "check": "npm run check:source && npm run check:corpus && npm run check:claims",
     "check:source": "node tools/check-source.mjs",
     "check:corpus": "node tools/check-corpus.mjs",
     "build:corpus": "node tools/build-corpus.mjs",
     "check:page": "node tools/check-page.mjs",
-    "verify": "node tools/verify.mjs"
+    "verify": "node tools/verify.mjs",
+    "capture": "node tools/capture.mjs",
+    "check:capture": "node tools/check-capture.mjs",
+    "check:claims": "node tools/check-claims.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.13.6",

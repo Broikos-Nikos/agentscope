@@ -1,0 +1,32 @@
+{
+  "recorded": "2026-09-24",
+  "mode": "green-control",
+  "looked": {
+    "paint": {
+      "--ink": "#080604",
+      "--lift": "#141010",
+      "--edge": "#2e2621",
+      "--text": "#fff",
+      "--dim": "#9a8f88",
+      "--faint": "#8a7f76",
+      "--flame": "#ff6a00",
+      "--flame-bright": "#ff8a1f",
+      "bodyFont": "system-ui, -apple-system, \"Segoe UI\", sans-serif",
+      "wash": "rgb(8, 6, 4)"
+    },
+    "words": {
+      "headline": "An agent wrote down six failures 43 times in 108 entries, and kept making them.",
+      "wordmark": "AGENTSCOPE",
+      "status": "The control that passes against the broken code: 5 of 108 entries, 4 with a run behind them."
+    },
+    "state": {
+      "selected": "green-control",
+      "rows": 6,
+      "columns": 108,
+      "filled": 54,
+      "runs": 36,
+      "selectedRuns": 4,
+      "entryOpen": true
+    }
+  }
+}
