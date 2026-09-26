@@ -6,7 +6,7 @@ No audit pass has been run against this project yet. Every finding here was
 raised by a sweep of a class found in another project in the same workspace,
 which is why the identifiers read `ACON` and `APRE` rather than a perspective.
 
-**8 findings, 3 closed, 5 open**, across the 0 perspectives that produced them.
+**8 findings, 4 closed, 4 open**, across the 0 perspectives that produced them.
 
 Held to the workspace queue this project is built from by
 `tools/check-audit-status.mjs`, which fails if a row here says anything the
@@ -19,12 +19,12 @@ Not a perspective and not an agent. Findings raised against this project while
 a class found somewhere else in the workspace was being swept across all eight,
 kept here because commit messages cite them like any other.
 
-8 findings, 3 closed.
+8 findings, 4 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
 | `ACAP-F1` | medium | open | capture.mjs hands the committed GIF to ffmpeg and closes its browser outside a finally |
-| `ACON-F1` | medium | open | Six mode buttons are bounded at 1.27:1 |
+| `ACON-F1` | medium | fixed, tick 176 | Six mode buttons are bounded at 1.27:1 |
 | `AGLIC-F1` | medium | fixed, tick 118 | The README claims MIT and the repository carries no LICENSE file and no gate holding the claim |
 | `AHEAD-F1` | medium | open | The h1 ships empty and is written by script, so a slow or blocked load has no headline at all |
 | `ASIZE-F1` | medium | open | The README says the entry text is 319 KB and the file is 326 KB, and nothing measures it |
