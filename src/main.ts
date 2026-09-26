@@ -96,7 +96,7 @@ function drawModes(): void {
       b.append(name, count)
       b.addEventListener('click', () => {
         selected = selected === m.id ? null : m.id
-        render()
+        markSelected()
       })
       return b
     }),
@@ -108,7 +108,6 @@ function drawGrid(): void {
     const row = document.createElement('div')
     row.className = 'row'
     row.dataset.mode = m.id
-    if (selected && selected !== m.id) row.classList.add('row--dim')
 
     const label = document.createElement('div')
     label.className = 'row__label'
@@ -174,16 +173,38 @@ async function open(i: number): Promise<void> {
   el.entry.replaceChildren(head, meta, pre)
 }
 
-function render(): void {
-  drawModes()
-  drawGrid()
-
+/**
+ * Which mode is picked, written onto the elements that already exist.
+ *
+ * Swept out of watch-it-think's WP-F3. Choosing a mode called `render`, which
+ * rebuilds everything: measured at tick 173, one click replaced **648 marks, 6
+ * rows and 654 buttons**, every node on the page, to change three attributes
+ * and one sentence. 2.2 ms, so it was never slow; it was the whole corpus
+ * being rebuilt under the pointer that was pointing at it, which is also how a
+ * click lands on a different mark than the one it was aimed at.
+ *
+ * Selection is three things and this is where all three live, including on the
+ * first draw, so the two paths cannot disagree.
+ */
+function markSelected(): void {
+  for (const b of el.modes.querySelectorAll<HTMLElement>('.mode')) {
+    b.setAttribute('aria-pressed', String(b.dataset.mode === selected))
+  }
+  for (const row of el.grid.querySelectorAll<HTMLElement>('.row')) {
+    row.classList.toggle('row--dim', Boolean(selected) && row.dataset.mode !== selected)
+  }
   el.status.textContent = selected
     ? `${modes.find((m) => m.id === selected)!.name}: ` +
       `${modes.find((m) => m.id === selected)!.entries} of ${entries.length} entries, ` +
       `${modes.find((m) => m.id === selected)!.replayable} with a run behind them.`
     : `${totals.entriesTouchingAnyMode} of ${entries.length} entries record at least one of ${totals.modes} failure modes. ` +
       `Pick one, or pick a mark.`
+}
+
+function render(): void {
+  drawModes()
+  drawGrid()
+  markSelected()
 }
 
 function boot(): void {

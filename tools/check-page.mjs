@@ -152,6 +152,56 @@ try {
     console.log(`  ok      the headline names its corpus: ${JSON.stringify(headline)}`)
   }
 
+  /*
+   * And picking a mode changes what it has to change and nothing else.
+   *
+   * Swept out of watch-it-think's WP-F3 at tick 173. Picking a mode called
+   * `render`, which rebuilds the page: measured before the fix, one click
+   * replaced 648 marks, 6 rows and 654 buttons, every node here, to change
+   * three attributes and one sentence. Node identity is the assertion rather
+   * than a timing, because a faster rebuild is still a rebuild: this page draws
+   * one mark per entry per mode, and rebuilding all of them under a pointer is
+   * how a click lands on a different mark than the one it was aimed at.
+   */
+  const reuse = await page.evaluate(async () => {
+    for (const sel of ['.mark', '.row', '.mode']) {
+      document.querySelectorAll(sel).forEach((n, i) => {
+        n.__mark = i
+      })
+    }
+    const mode = document.querySelector('.mode')
+    mode.click()
+    await new Promise((r) => requestAnimationFrame(r))
+    const kept = (sel) => [...document.querySelectorAll(sel)].filter((n) => n.__mark !== undefined).length
+    return {
+      marks: { kept: kept('.mark'), of: document.querySelectorAll('.mark').length },
+      rows: { kept: kept('.row'), of: document.querySelectorAll('.row').length },
+      modes: { kept: kept('.mode'), of: document.querySelectorAll('.mode').length },
+      pressed: document.querySelectorAll('.mode[aria-pressed="true"]').length,
+      dimmed: document.querySelectorAll('.row--dim').length,
+      picked: document.querySelector('.mode')?.getAttribute('aria-pressed'),
+    }
+  })
+
+  const rebuilt = ['marks', 'rows', 'modes'].filter((k) => reuse[k].kept < reuse[k].of)
+  if (rebuilt.length > 0) {
+    fail(
+      `picking a mode replaced ${rebuilt.map((k) => `${reuse[k].of - reuse[k].kept} of ${reuse[k].of} ${k}`).join(', ')}`,
+      'nothing about the corpus changed, so nothing about those elements had to',
+    )
+  } else {
+    console.log(`  ok      picking a mode keeps all ${reuse.marks.of} marks, ${reuse.rows.of} rows and ${reuse.modes.of} cards`)
+  }
+
+  if (reuse.pressed !== 1 || reuse.picked !== 'true' || reuse.dimmed !== reuse.rows.of - 1) {
+    fail(
+      `after picking the first mode: ${reuse.pressed} pressed, first card aria-pressed=${reuse.picked}, ${reuse.dimmed} of ${reuse.rows.of} rows dimmed`,
+      'one card pressed and every other row dimmed is the whole of what picking a mode means here',
+    )
+  } else {
+    console.log(`  ok      one card pressed and ${reuse.dimmed} of ${reuse.rows.of} rows dimmed, which is what picking one means`)
+  }
+
   await browser.close()
 } finally {
   server.stop()
