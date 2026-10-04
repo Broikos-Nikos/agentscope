@@ -291,10 +291,25 @@ function render(): void {
 }
 
 function boot(): void {
+  /*
+   * "AI", in the first four words.
+   *
+   * ARC-F1. Counted across the whole README before tick 194: AI 0, LLM 0,
+   * model 0, agent 3. Above the fold at 1280x800 and at 390x844: AI 0. The
+   * recruiter pass put it as "an agent could be an estate agent", and the fact
+   * that makes this project worth stopping for, that an AI coding agent kept a
+   * log of its own mistakes and made them again, was not on the screen.
+   *
+   * The category, not the tool. No tool is named anywhere in this workspace,
+   * including in its commits, and the frozen corpus names none either: Claude
+   * 0, Copilot 0, Cursor 0, Anthropic 0, and the GPT and OpenAI hits in it are
+   * tokenizer names from the projects it was building. D22 records the call.
+   */
   el.headline.textContent =
-    `An agent wrote down six failures ${totals.records} times in ${entries.length} entries, and kept making them.`
+    `An AI coding agent wrote down six failures ${totals.records} times in ${entries.length} entries, and kept making them.`
 
   el.standfirst.textContent =
+    `For five days it built the other projects on this profile and kept this log while it worked: ` +
     `${entries.length} entries across ${totals.ticks} ticks, to tick ${totals.highestTick}, ` +
     `written between ${totals.firstDate} and ${totals.lastDate} by the agent the failures were ` +
     `happening to, while they were happening. Every one of the ${totals.modes} modes has two or more ` +

@@ -5,7 +5,7 @@ Commit messages cite identifiers like `AGLIC-F1`. This is what they refer to.
 Three audit passes and the workspace sweeps. The passes were run by a separate
 agent against one assigned perspective, with no write access to this project.
 
-**24 findings, 11 closed, 13 open**, across the 3 perspectives that produced them.
+**24 findings, 12 closed, 12 open**, across the 3 perspectives that produced them.
 
 Held to the workspace queue this project is built from by
 `tools/check-audit-status.mjs`, which fails if a row here says anything the
@@ -46,11 +46,11 @@ connection, with the keyboard, trying to make it fall over. Filed 2026-09-26.
 The recruiter: ten seconds on the page, then two minutes if the ten seconds
 earned them. Filed 2026-09-26.
 
-4 findings, 0 closed.
+4 findings, 1 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
-| `ARC-F1` | high | open | Nothing a recruiter reads in ten seconds says the agent is an AI |
+| `ARC-F1` | high | fixed, tick 194 | Nothing a recruiter reads in ten seconds says the agent is an AI |
 | `ARC-F2` | medium | open | Between the headline and the picture sits the project's private vocabulary |
 | `ARC-F3` | medium | open | The picture cannot be read on a phone, and it opens below the headline |
 | `ARC-F4` | medium | open | Nothing is written for the About box |

@@ -1,10 +1,12 @@
 # agentscope
 
-### An agent wrote down six failures 32 times in 108 entries, and kept making them.
+### An AI coding agent wrote down six failures 32 times in 108 entries, and kept making them.
 
-A development log, kept by the thing it was about, for five days and 108 entries.
-Six failure modes recur in it. Every one was written up as a lesson, in bold,
-with a prescription, and every one happened again afterwards.
+For five days and 108 entries an AI coding agent built the other projects on
+this profile and kept a development log while it worked. Six kinds of failure
+recur in it. Every
+one was written up as a lesson, in bold, with a prescription, and every one
+happened again afterwards.
 
 ![Six rows of marks, one per failure mode, 108 entries left to right. Choosing "the control that passes against the broken code" dims the other five rows and leaves four bright marks spread across the log, one near the start and three near the end. Clicking the last one opens the real entry, with its commit](docs/agentscope.gif)
 
