@@ -15,6 +15,7 @@
     "check:labels": "node tools/check-labels.mjs",
     "build:corpus": "node tools/build-corpus.mjs",
     "check:page": "node tools/check-page.mjs",
+    "check:reach": "node tools/check-reach.mjs",
     "verify": "node tools/verify.mjs",
     "capture": "node tools/capture.mjs",
     "check:capture": "node tools/check-capture.mjs",

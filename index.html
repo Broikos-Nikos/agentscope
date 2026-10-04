@@ -52,6 +52,20 @@
       -->
       <section class="grid" data-grid></section>
 
+      <!--
+        AHS-F1 and AHS-F4. The grid is the picture and it is not a control. A
+        mark is 2.31 pixels wide at 390 and 2.03 at 360, against the 24 by 24 of
+        WCAG 2.5.8, so a fingertip covers ten of them and nobody can open the
+        one they mean; and from the keyboard the grid is 648 buttons, so Enter
+        on a mark opened an entry 642 Tab presses away from it.
+
+        Picking a mode lists that mode's entries here, full width, at most ten
+        of them. That is the whole of what a phone reader needs, the whole of
+        what a keyboard reader needs, and it lets the grid stop pretending to be
+        a tap target.
+      -->
+      <section class="picks" data-picks hidden aria-label="entries in the chosen mode"></section>
+
       <p class="caption" data-caption></p>
 
       <!-- What a click opens: the real entry, not a summary of it. -->

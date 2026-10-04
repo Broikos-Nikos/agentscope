@@ -5,7 +5,7 @@ Commit messages cite identifiers like `AGLIC-F1`. This is what they refer to.
 Three audit passes and the workspace sweeps. The passes were run by a separate
 agent against one assigned perspective, with no write access to this project.
 
-**23 findings, 8 closed, 15 open**, across the 3 perspectives that produced them.
+**24 findings, 11 closed, 13 open**, across the 3 perspectives that produced them.
 
 Held to the workspace queue this project is built from by
 `tools/check-audit-status.mjs`, which fails if a row here says anything the
@@ -32,14 +32,14 @@ all 108 entries added the same morning at this session's request.
 The hostile stranger: somebody who did not build this, on a phone, on a slow
 connection, with the keyboard, trying to make it fall over. Filed 2026-09-26.
 
-4 findings, 0 closed.
+4 findings, 2 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
-| `AHS-F1` | high | open | On a phone a mark is 2.3 pixels wide, so nobody can open the entry they mean |
+| `AHS-F1` | high | fixed, tick 193 | On a phone a mark is 2.3 pixels wide, so nobody can open the entry they mean |
 | `AHS-F2` | medium | open | A second click while the log is downloading can open the wrong entry |
 | `AHS-F3` | medium | open | When the log fails to download, the panel says "fetching the log" for the rest of the visit |
-| `AHS-F4` | medium | open | From the keyboard, an opened entry is 645 Tab presses away |
+| `AHS-F4` | medium | fixed, tick 193 | From the keyboard, an opened entry is 645 Tab presses away |
 
 ## `ARC`, recruiter
 
@@ -61,7 +61,7 @@ Not a perspective and not an agent. Findings raised against this project while
 a class found somewhere else in the workspace was being swept across all eight,
 kept here because commit messages cite them like any other.
 
-10 findings, 6 closed.
+11 findings, 7 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
@@ -75,3 +75,4 @@ kept here because commit messages cite them like any other.
 | `AGIF-F1` | low | open | The loop runs 6.88 seconds, above the five and a half tokenlab settled on |
 | `ALAB-F1` | low | fixed, tick 191 | The page headline and the README counted different things and nothing compared them |
 | `APRE-F1` | low | fixed, tick 165 | npm run verify started a server and handed the same missing browser to every gate in turn |
+| `AREACH-F1` | low | fixed, tick 193 | The new list put data-entry on every row, which is the entry panel own hook |

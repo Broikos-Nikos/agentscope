@@ -34,6 +34,7 @@ const el = {
   modes: document.querySelector<HTMLElement>('[data-modes]')!,
   status: document.querySelector<HTMLElement>('[data-status]')!,
   grid: document.querySelector<HTMLElement>('[data-grid]')!,
+  picks: document.querySelector<HTMLElement>('[data-picks]')!,
   caption: document.querySelector<HTMLElement>('[data-caption]')!,
   entry: document.querySelector<HTMLElement>('[data-entry]')!,
   footer: document.querySelector<HTMLElement>('[data-footer]')!,
@@ -126,6 +127,17 @@ function drawGrid(): void {
       const mark = document.createElement('button')
       mark.type = 'button'
       mark.className = 'mark'
+      /*
+       * Out of the tab order, and the list below is the way in.
+       *
+       * AHS-F4. 654 tab stops on this page, 648 of them marks. Measured at tick
+       * 193: thirteen Tab presses reach the first flame mark, Enter opens its
+       * entry, and **642 more** reach anything inside it, so a keyboard reader
+       * could open an entry and not read it. A pointer can still click a mark,
+       * which is what it is good at; choosing one by keyboard is what the list
+       * is for, at most ten stops instead of 648.
+       */
+      mark.tabIndex = -1
       if (carries.has(i)) mark.classList.add(hasRun.has(i) ? 'mark--run' : 'mark--on')
       const e = entries[i]
       mark.title = `${e.tick === null ? 'no tick' : `tick ${e.tick}`}: ${e.heading}`
@@ -154,6 +166,17 @@ async function open(i: number): Promise<void> {
 
   const head = document.createElement('h2')
   head.textContent = e.heading
+  /*
+   * And the focus goes with it.
+   *
+   * AHS-F4. Opening an entry left focus where it was, so a keyboard reader
+   * pressed Enter and then had to walk to what they had opened: 642 Tab presses
+   * when the marks were in the tab order, and still 18 once the list replaced
+   * them, because the other nine entries sit between the chosen one and the
+   * panel. `tabIndex = -1` makes the heading focusable without adding a stop,
+   * which is what it is for.
+   */
+  head.tabIndex = -1
 
   const meta = document.createElement('p')
   meta.className = 'entry__meta'
@@ -171,6 +194,7 @@ async function open(i: number): Promise<void> {
   pre.textContent = text
 
   el.entry.replaceChildren(head, meta, pre)
+  head.focus()
 }
 
 /**
@@ -186,6 +210,64 @@ async function open(i: number): Promise<void> {
  * Selection is three things and this is where all three live, including on the
  * first draw, so the two paths cannot disagree.
  */
+/**
+ * The entries of the chosen mode, as a list that is actually a control.
+ *
+ * AHS-F1. A mark is 2.31 pixels wide at 390 and 2.03 at 360, against the 24 by
+ * 24 of WCAG 2.5.8, and on both phone widths the grid starts below the fold. A
+ * fingertip covers ten marks, and the flame ones sit among grey. So the grid
+ * stops being the way in and becomes what it always was, a picture of where in
+ * 108 entries a failure recurs, and this is the way in: full width rows, a 44
+ * pixel minimum, tick and heading, at most ten of them because the largest mode
+ * has ten records.
+ *
+ * It is the same fix for three readers. A thumb gets a target it can hit, a
+ * keyboard gets ten stops instead of 648, and a screen reader gets a list of
+ * named entries instead of 648 buttons called "no record that outlived what it
+ * described, Tick 42, ...".
+ */
+function drawPicks(): void {
+  const mode = modes.find((m) => m.id === selected)
+  if (!mode) {
+    el.picks.hidden = true
+    el.picks.replaceChildren()
+    return
+  }
+  el.picks.hidden = false
+  const runs = new Set(mode.runsAt)
+  el.picks.replaceChildren(
+    ...mode.at.map((i) => {
+      const e = entries[i]
+      const b = document.createElement('button')
+      b.type = 'button'
+      b.className = runs.has(i) ? 'pick pick--run' : 'pick'
+      /* `data-pick`, not `data-entry`: the panel is `[data-entry]`, and the
+         first version of this put the same attribute on every button in the
+         list, so `document.querySelector('[data-entry]')` returned a button and
+         anything selecting the panel got the wrong element. Caught by a
+         measurement that said focus was outside the panel while sitting on its
+         own heading. */
+      b.dataset.pick = String(i)
+
+      const tick = document.createElement('span')
+      tick.className = 'pick__tick'
+      tick.textContent = e.tick === null ? 'no tick' : `tick ${e.tick}`
+
+      const head = document.createElement('span')
+      head.className = 'pick__head'
+      head.textContent = e.heading
+
+      b.append(tick, head)
+      b.setAttribute(
+        'aria-label',
+        `${e.tick === null ? 'no tick' : `tick ${e.tick}`}, ${e.heading}${runs.has(i) ? ', with a run' : ''}`,
+      )
+      b.addEventListener('click', () => void open(i))
+      return b
+    }),
+  )
+}
+
 function markSelected(): void {
   for (const b of el.modes.querySelectorAll<HTMLElement>('.mode')) {
     b.setAttribute('aria-pressed', String(b.dataset.mode === selected))
@@ -193,6 +275,7 @@ function markSelected(): void {
   for (const row of el.grid.querySelectorAll<HTMLElement>('.row')) {
     row.classList.toggle('row--dim', Boolean(selected) && row.dataset.mode !== selected)
   }
+  drawPicks()
   el.status.textContent = selected
     ? `${modes.find((m) => m.id === selected)!.name}: ` +
       `${modes.find((m) => m.id === selected)!.entries} of ${entries.length} entries, ` +

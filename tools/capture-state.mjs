@@ -61,6 +61,11 @@ export function lookAt() {
     rows: document.querySelectorAll('.row').length,
     columns: document.querySelectorAll('.row .mark').length / Math.max(1, document.querySelectorAll('.row').length),
     filled: document.querySelectorAll('.mark--on, .mark--run').length,
+    /* The list the chosen mode opens, which is the page's way into an entry
+       since AHS-F1. A recording the README calls the real page has to show the
+       control a visitor uses, and three gates in this workspace have now been
+       caught pinning everything except the thing that changed. */
+    picks: document.querySelectorAll('.pick').length,
     runs: document.querySelectorAll('.mark--run').length,
     // The selected row's own marks, which is what the reader is looking at when
     // the recording stops.
