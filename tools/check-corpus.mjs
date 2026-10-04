@@ -96,7 +96,8 @@ if (!committed.source?.sha256) {
 }
 
 // 1. The same extraction, run again, against the same source.
-const fresh = extract(readFileSync(frozen, 'utf8'))
+const labels = JSON.parse(readFileSync(resolve(root, 'data/labels.json'), 'utf8'))
+const fresh = extract(readFileSync(frozen, 'utf8'), labels)
 
 const drift = []
 const cmp = (path, a, b) => {

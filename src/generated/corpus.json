@@ -971,65 +971,66 @@
       "id": "stale-record",
       "name": "The record that outlived what it described",
       "mechanism": "A written down fact stays true in the file after it stops being true in the world: a number in prose, a picture of a page, a queue entry naming a defect that is fixed.",
-      "entries": 23,
-      "replayable": 13,
+      "entries": 10,
+      "replayable": 7,
       "firstSeen": "2026-09-21",
       "at": [
-        3,
         6,
-        15,
-        23,
         58,
         59,
         62,
-        65,
         70,
         71,
-        72,
-        73,
         75,
         84,
-        87,
-        89,
         92,
-        97,
-        98,
-        100,
-        104,
-        105,
         106
       ],
       "runsAt": [
-        3,
         6,
-        15,
-        23,
         58,
         59,
-        65,
         70,
-        73,
         75,
         92,
-        105,
         106
-      ]
+      ],
+      "candidates": 23
+    },
+    {
+      "id": "green-control",
+      "name": "The control that passes against the broken code",
+      "mechanism": "A check written to prove a fix works is run against the defect and reports success, because it measures a proxy, or its condition cannot occur, or the artefact it tested was never rebuilt, or the claim is a bare number the document says elsewhere anyway.",
+      "entries": 7,
+      "replayable": 4,
+      "firstSeen": "2026-09-21",
+      "at": [
+        12,
+        79,
+        85,
+        89,
+        91,
+        93,
+        107
+      ],
+      "runsAt": [
+        12,
+        79,
+        93,
+        107
+      ],
+      "candidates": 5
     },
     {
       "id": "corrupted-escape",
       "name": "The escape that arrived as a byte",
       "mechanism": "Source is written through a heredoc or a nested quote and an escape is interpreted one layer too early, so a regex is compiled against an invisible character it can never match.",
-      "entries": 10,
-      "replayable": 7,
+      "entries": 5,
+      "replayable": 4,
       "firstSeen": "2026-09-21",
       "at": [
         31,
-        33,
         36,
-        38,
-        52,
-        56,
-        78,
         91,
         96,
         107
@@ -1037,80 +1038,48 @@
       "runsAt": [
         31,
         36,
-        52,
-        56,
-        78,
         96,
         107
-      ]
+      ],
+      "candidates": 10
     },
     {
       "id": "masked-exit",
       "name": "The exit code the shell threw away",
       "mechanism": "A command fails and the caller never learns, because the status reported belongs to a pipe, a redirect, a grep that matched nothing, or the second half of an ||.",
-      "entries": 9,
-      "replayable": 7,
+      "entries": 4,
+      "replayable": 3,
       "firstSeen": "2026-09-21",
       "at": [
         31,
         48,
-        49,
-        51,
         63,
-        85,
-        88,
-        105,
-        107
+        85
       ],
       "runsAt": [
         31,
         48,
-        49,
-        51,
-        63,
-        105,
-        107
-      ]
-    },
-    {
-      "id": "green-control",
-      "name": "The control that passes against the broken code",
-      "mechanism": "A check written to prove a fix works is run against the defect and reports success, because it measures a proxy, or its condition cannot occur, or the artefact it tested was never rebuilt, or the claim is a bare number the document says elsewhere anyway.",
-      "entries": 5,
-      "replayable": 4,
-      "firstSeen": "2026-09-21",
-      "at": [
-        12,
-        79,
-        93,
-        104,
-        107
+        63
       ],
-      "runsAt": [
-        12,
-        79,
-        93,
-        107
-      ]
+      "candidates": 9
     },
     {
       "id": "orphaned-process",
       "name": "The cleanup that could not run",
       "mechanism": "A process is started and its kill is scheduled somewhere that cannot execute it, so it survives every run and accumulates until the machine refuses to start more.",
-      "entries": 4,
-      "replayable": 3,
+      "entries": 3,
+      "replayable": 2,
       "firstSeen": "2026-09-22",
       "at": [
         62,
         65,
-        79,
         105
       ],
       "runsAt": [
         65,
-        79,
         105
-      ]
+      ],
+      "candidates": 4
     },
     {
       "id": "unproved-server",
@@ -1127,7 +1096,8 @@
       "runsAt": [
         21,
         65
-      ]
+      ],
+      "candidates": 3
     }
   ],
   "totals": {
@@ -1136,17 +1106,18 @@
     "highestTick": 104,
     "firstDate": "2026-09-20",
     "lastDate": "2026-09-24",
-    "entriesTouchingAnyMode": 43,
+    "entriesTouchingAnyMode": 25,
+    "records": 32,
     "modesWithTwoOrMoreRuns": 6,
-    "allModesFrom": 80,
+    "allModesFrom": 106,
     "stability": [
       {
         "entries": 30,
-        "modes": 1
+        "modes": 0
       },
       {
         "entries": 50,
-        "modes": 3
+        "modes": 2
       },
       {
         "entries": 70,
@@ -1154,7 +1125,7 @@
       },
       {
         "entries": 90,
-        "modes": 6
+        "modes": 5
       },
       {
         "entries": 108,

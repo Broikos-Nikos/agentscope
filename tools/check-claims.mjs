@@ -54,7 +54,16 @@ const overlapPercent = Math.round((100 * overlapping) / t.entriesTouchingAnyMode
 
 /** What the README has to say, derived rather than listed. */
 const CLAIMS = [
-  ['the headline count', `six failures ${t.entriesTouchingAnyMode} times in ${n} entries`],
+  /*
+   * The headline counts records, not entries.
+   *
+   * AME-F1. "An agent wrote down six failures N times" is a sentence about how
+   * many times it wrote one down, and until tick 191 this held it to the number
+   * of entries that carry at least one, which is a different and smaller thing:
+   * 6 of the 25 carry two or more. The entries figure is still asserted, on the
+   * sentence that is actually about entries, two lines down.
+   */
+  ['the headline count', `six failures ${records} times in ${n} entries`],
   ['the corpus size in the opening', `five days and ${n} entries`],
   ['entries touching a mode', `${t.entriesTouchingAnyMode} of the ${n}`],
   ['the total mode records', `carry ${records} mode records`],

@@ -1,6 +1,6 @@
 # agentscope
 
-### An agent wrote down six failures 43 times in 108 entries, and kept making them.
+### An agent wrote down six failures 32 times in 108 entries, and kept making them.
 
 A development log, kept by the thing it was about, for five days and 108 entries.
 Six failure modes recur in it. Every one was written up as a lesson, in bold,
@@ -18,18 +18,30 @@ passes against broken code was itself passed by a control against a broken spec.
 
 | mode | entries | with a run | first seen |
 |---|---|---|---|
-| The record that outlived what it described | 23 | 13 | 2026-09-21 |
-| The escape that arrived as a byte | 10 | 7 | 2026-09-21 |
-| The exit code the shell threw away | 9 | 7 | 2026-09-21 |
-| The control that passes against the broken code | 5 | 4 | 2026-09-21 |
-| The cleanup that could not run | 4 | 3 | 2026-09-22 |
+| The record that outlived what it described | 10 | 7 | 2026-09-21 |
+| The control that passes against the broken code | 7 | 4 | 2026-09-21 |
+| The escape that arrived as a byte | 5 | 4 | 2026-09-21 |
+| The exit code the shell threw away | 4 | 3 | 2026-09-21 |
+| The cleanup that could not run | 3 | 2 | 2026-09-22 |
 | Measuring whatever answered | 3 | 2 | 2026-09-21 |
 
-**Counted in entries, and an entry may record more than one.** 43 of the 108
-entries record at least one mode, and the 108 entries carry 54 mode records
-between them, because 7 record two or more. That is why the page draws six rows
-rather than one mark per entry: a single mark would have been showing one of
-several answers on 16% of the marks it filled.
+**Counted by reading, not by matching.** 25 of the 108 entries record at least
+one mode, and they carry 32 mode records between them, because 6 record two or more.
+That is why the page draws six rows rather than one mark per entry: a single
+mark would have been showing one of several answers on 24% of the marks it
+filled.
+
+**Where those numbers come from, and why they are smaller than they were.**
+`data/labels.json` holds every record, by entry, with the sentence that shows
+it. Until 4 October this README said 43 entries and 54 records, which is what a
+phrase match produces: a mode was recorded whenever one of its words appeared
+anywhere in an entry. Read by hand over all 108, 22 of those 54 are the word
+used in another sense, the Escape key, a byte order mark in pasted input, "this
+time it was not stale", a hypothetical, a quotation of the taxonomy itself. The
+phrases now find candidates and `data/labels.json` says which are real: 54
+candidates, 29 kept, 25 rejected, and 3 the phrases never found at all. Every
+rejection is in that file with the sentence it matched in, so the judgement can
+be checked rather than taken.
 
 **"With a run" is the column that matters.** It counts entries carrying pasted
 failure output or a commit hash, so the mode can be followed rather than
@@ -57,7 +69,7 @@ Rebuilding from the first N entries only:
 | 70 entries | 4 |
 | 90 entries | 6 |
 
-All six clear the bar only from **entry 80**, so the claim at the top of this
+All six clear the bar only from **entry 106**, so the claim at the top of this
 README would have been false at every earlier freeze. That is the more useful
 finding anyway: it says roughly how much of its own log an agent has to keep
 before its recurrences become visible at all.

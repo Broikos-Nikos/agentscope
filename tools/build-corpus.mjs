@@ -66,7 +66,8 @@ const textSha = (buf) => createHash('sha256').update(normalise(buf), 'utf8').dig
 const textBytes = (buf) => Buffer.byteLength(normalise(buf), 'utf8')
 const sha256 = textSha(readFileSync(FROZEN))
 
-const corpus = extract(text)
+const labels = JSON.parse(readFileSync(resolve(root, 'data/labels.json'), 'utf8'))
+const corpus = extract(text, labels)
 corpus.source = {
   what: 'The development log of the workspace that built this project and its siblings.',
   file: 'data/devlog.md',

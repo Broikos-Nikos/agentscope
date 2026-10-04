@@ -45,7 +45,9 @@ const t = c.totals
 
 /** What the page has to say, in the page's own words, derived from the corpus. */
 const CLAIMS = [
-  ['the headline count', `six failures ${t.entriesTouchingAnyMode} times in ${n} entries`],
+  /* Records, not entries: AME-F1. The sentence is about how many times the
+     agent wrote a failure down, and 6 of the 25 entries carry two. */
+  ['the headline count', `six failures ${t.records} times in ${n} entries`],
   ['the corpus size and span', `${n} entries across ${t.ticks} ticks, to tick ${t.highestTick}`],
   ['the dates', `between ${t.firstDate} and ${t.lastDate}`],
   ['the mode count in the standfirst', `each one of the ${t.modes} modes`.replace('each one', 'Every one')],

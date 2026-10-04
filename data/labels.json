@@ -1,0 +1,419 @@
+{
+  "what": "Every record of a failure mode in data/devlog.md, read by hand, with the sentence that shows it. Not derived: tools/corpus-lib.mjs finds candidates and this file says which of them are real.",
+  "why": "AME-F1. The phrase matcher counted 54 records across 43 entries and 22 of those records are the word used in another sense: the Escape key, a byte order mark in pasted input, \"this time it was not stale\". The page said an agent wrote down six failures 43 times. It wrote them down 32 times across 25 entries.",
+  "labelledBy": "audits/agentscope-2026-09-26-measurement.md, by hand, over all 108 entries",
+  "labelled": "2026-09-26",
+  "entries": 108,
+  "records": [
+    {
+      "entry": 7,
+      "tick": 5,
+      "mode": "stale-record",
+      "run": true,
+      "shows": "**What changed** `tools/check-claims.ts` rebuilds all 29 numeric claims in `README.md` from `src/generated/findings.json` and fails by name if any of them has drifted."
+    },
+    {
+      "entry": 13,
+      "tick": 11,
+      "mode": "green-control",
+      "run": true,
+      "shows": "**Proof** ``` $ npm run check:loading a vocabulary that never arrives ok the page says the vocabulary did not arrive ok the button it was asked for is no longer marked busy ok nothing was thrown out o"
+    },
+    {
+      "entry": 22,
+      "tick": 19,
+      "mode": "unproved-server",
+      "run": true,
+      "shows": "**The tick embarrassed itself, usefully** `npm run check:loading` failed on the way to committing, and the reason was `net::ERR_CONNECTION_REFUSED at http://localhost:5173/`."
+    },
+    {
+      "entry": 32,
+      "tick": 29,
+      "mode": "corrupted-escape",
+      "run": true,
+      "shows": "A heredoc patch at tick 20 collapsed an escaped newline into a real one and left an unterminated string inside an `add_argument` call."
+    },
+    {
+      "entry": 32,
+      "tick": 29,
+      "mode": "masked-exit",
+      "run": true,
+      "shows": "The traceback went to a pattern that did not match, the exit code was never checked, and the tick reported success."
+    },
+    {
+      "entry": 37,
+      "tick": 34,
+      "mode": "corrupted-escape",
+      "run": true,
+      "shows": "**Caught by a gate I added five ticks ago** `check:tools` failed on `quantize.py` mid tick: a heredoc collapsed `\\n` into a real newline inside an f-string, exactly the class of defect that gate exist"
+    },
+    {
+      "entry": 49,
+      "tick": 46,
+      "mode": "masked-exit",
+      "run": true,
+      "shows": "**Three things went wrong building it, all found by looking at the output rather than at the exit code.** It clicked head handles collected before the first click, which selecting a head detaches by r"
+    },
+    {
+      "entry": 59,
+      "tick": 56,
+      "mode": "stale-record",
+      "run": true,
+      "shows": "The capture tool exists, takes ninety seconds, and it did not occur to me because nothing fails when a GIF goes stale."
+    },
+    {
+      "entry": 60,
+      "tick": 57,
+      "mode": "stale-record",
+      "run": true,
+      "shows": "A GIF cannot go stale loudly, and every other gate here reads code or numbers."
+    },
+    {
+      "entry": 63,
+      "tick": 60,
+      "mode": "orphaned-process",
+      "run": false,
+      "shows": "**It did not take that on trust.** It cloned into a scratch directory, made a real change, timed `npm run build` three times at 84.0, 87.3 and 89.7 seconds, timed every gate individually, and found te"
+    },
+    {
+      "entry": 63,
+      "tick": 60,
+      "mode": "stale-record",
+      "run": false,
+      "shows": "**What it would delete**, and it was asked directly: the `allowScripts` entry in the OWNERS map, the browser halves of `check:capture` and `check:first-screen` which spend two Chromium boots reading s"
+    },
+    {
+      "entry": 63,
+      "tick": 60,
+      "mode": "unproved-server",
+      "run": false,
+      "shows": "- **Ten gates, ten hardcoded ports, and not one checks it is talking to the server it started.** It demonstrated one reporting green against a page it had never looked at."
+    },
+    {
+      "entry": 64,
+      "tick": 61,
+      "mode": "masked-exit",
+      "run": true,
+      "shows": "``` npm run check in a clean clone EXIT=0 note no 'main' branch here, which is normal in a single branch clone note STYLEGUIDE.md is not here, so the vendored tokens are the authority all nine file re"
+    },
+    {
+      "entry": 66,
+      "tick": 63,
+      "mode": "orphaned-process",
+      "run": true,
+      "shows": "The maintainer audit found both halves: ten servers leaked on this machine from earlier runs, and one gate demonstrably reporting green against a page it had never started, because something was alrea"
+    },
+    {
+      "entry": 66,
+      "tick": 63,
+      "mode": "unproved-server",
+      "run": true,
+      "shows": "**What was wrong.** Eleven tools each started their own `vite preview` on a hardcoded port, waited for it, and measured whatever answered."
+    },
+    {
+      "entry": 71,
+      "tick": 68,
+      "mode": "stale-record",
+      "run": true,
+      "shows": "The picture has been one commit stale since it was made."
+    },
+    {
+      "entry": 72,
+      "tick": 69,
+      "mode": "stale-record",
+      "run": false,
+      "shows": "Run against the stale file it exited 1 with \"docs/capture.json records no headline and standfirst\"."
+    },
+    {
+      "entry": 76,
+      "tick": 73,
+      "mode": "stale-record",
+      "run": true,
+      "shows": "Controls: \"the line showed 0 progress states during the download\" against the page as published, exit 1; \"twenty one, the total; ten near npm run build; eleven near npm run verify\" against the stale h"
+    },
+    {
+      "entry": 80,
+      "tick": 77,
+      "mode": "green-control",
+      "run": true,
+      "shows": "**The gate's first version was green against the broken code, and that is the part worth recording.** I wrote the fifth assertion to abort `router.int8.onnx`, ran it against the defect, and it passed."
+    },
+    {
+      "entry": 85,
+      "tick": 82,
+      "mode": "stale-record",
+      "run": false,
+      "shows": "It was already reported and had been for days, so T25 was stale like T68 was."
+    },
+    {
+      "entry": 86,
+      "tick": 83,
+      "mode": "green-control",
+      "run": false,
+      "shows": "The first two attempts at that control reported green"
+    },
+    {
+      "entry": 86,
+      "tick": 83,
+      "mode": "masked-exit",
+      "run": false,
+      "shows": "Piping a build and reading the tail hides its exit code, which is the same family as the `a || b` masking at tick 61 and the `grep -c` at tick 46."
+    },
+    {
+      "entry": 90,
+      "tick": 87,
+      "mode": "green-control",
+      "run": false,
+      "shows": "The first attempt reported a failed build I did not read"
+    },
+    {
+      "entry": 92,
+      "tick": 89,
+      "mode": "corrupted-escape",
+      "run": false,
+      "shows": "**And the heredoc mangled a regex again.** The invisible character class arrived with a literal U+FEFF and U+200B to U+200F inside it: it worked, and the source contained six invisible characters in a"
+    },
+    {
+      "entry": 92,
+      "tick": 89,
+      "mode": "green-control",
+      "run": false,
+      "shows": "measuring a proxy instead of the thing"
+    },
+    {
+      "entry": 93,
+      "tick": 90,
+      "mode": "stale-record",
+      "run": true,
+      "shows": "## Tick 90, 2026-09-23 18:40, build day, the queue itself **The ladder sent me to WH-F12 and it was the fifth stale entry today, so the tick became the queue.** Both published pages live and green."
+    },
+    {
+      "entry": 94,
+      "tick": 91,
+      "mode": "green-control",
+      "run": true,
+      "shows": "Six of the day's controls were wrong first and every one is recorded as such, because a control that passes against the broken code is worth less than no control at all."
+    },
+    {
+      "entry": 97,
+      "tick": 94,
+      "mode": "corrupted-escape",
+      "run": true,
+      "shows": "**And the assertion written for the duration was dead in a way that took `cat -A` to see.** Its regex was `/<BS>\\d{4,} ms<BS>/`, where `<BS>` is a literal backspace byte, 0x08."
+    },
+    {
+      "entry": 106,
+      "tick": 102,
+      "mode": "orphaned-process",
+      "run": true,
+      "shows": "An exit handler runs after the event loop has drained, so that kill was queued into a loop that had already finished and never started once, since the file was written."
+    },
+    {
+      "entry": 107,
+      "tick": 103,
+      "mode": "stale-record",
+      "run": true,
+      "shows": "**How deep it goes, measured rather than assumed.** A seeded sample of fourteen open mediums, drawn rather than chosen: ten could be settled by command, of which **three were stale and seven were real"
+    },
+    {
+      "entry": 108,
+      "tick": 104,
+      "mode": "corrupted-escape",
+      "run": true,
+      "shows": "**Six modes, derived rather than invented**, each admitted only with a mechanism, two independent occurrences, and at least one entry carrying pasted output or a commit: | mode | entries | with a run "
+    },
+    {
+      "entry": 108,
+      "tick": 104,
+      "mode": "green-control",
+      "run": true,
+      "shows": "**Six modes, derived rather than invented**, each admitted only with a mechanism, two independent occurrences, and at least one entry carrying pasted output or a commit: | mode | entries | with a run "
+    }
+  ],
+  "entriesTouchingAnyMode": 25,
+  "byMode": {
+    "stale-record": 10,
+    "corrupted-escape": 5,
+    "masked-exit": 4,
+    "green-control": 7,
+    "orphaned-process": 3,
+    "unproved-server": 3
+  },
+  "rejected": [
+    {
+      "entry": 4,
+      "tick": 3,
+      "mode": "stale-record",
+      "matched": "drifted",
+      "inSentence": "That means re-declaring the architecture, and a re-declaration that has silently drifted is worse than no export at all."
+    },
+    {
+      "entry": 16,
+      "tick": 13,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "**Publishing is now a paste** `package.json` carries a description written for a profile listing rather than for npm, deliberately with no numbers in it, because a GitHub About box is somewhere `npm r"
+    },
+    {
+      "entry": 24,
+      "tick": 21,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "Comments are checked on purpose: one that says \"forty pairs\" goes stale exactly like a sentence that says it, and it is read by the person most likely to act on it."
+    },
+    {
+      "entry": 34,
+      "tick": 31,
+      "mode": "corrupted-escape",
+      "matched": "invisible character",
+      "inSentence": "It is the likeliest invisible character in text that has been through a file, and on `<BOM>turn off the kitchen lights` Python emits `<unk>` first and the port emitted nothing at all, shifting every i"
+    },
+    {
+      "entry": 39,
+      "tick": 36,
+      "mode": "corrupted-escape",
+      "matched": "invisible character",
+      "inSentence": "`tokenizer.ts` spends twenty lines explaining that a leading byte order mark is the likeliest invisible character in pasted text, that Python turns it into a token, and that `PY_SPACE` was built to ma"
+    },
+    {
+      "entry": 50,
+      "tick": 47,
+      "mode": "masked-exit",
+      "matched": "exit code",
+      "inSentence": "**Found by reading the output rather than the exit code.** The runner up line said \"Next likeliest timer.set at 0 percent\", which is what rounding 0.4 percent to no decimals produces, and reads as tho"
+    },
+    {
+      "entry": 52,
+      "tick": 49,
+      "mode": "masked-exit",
+      "matched": "exit code",
+      "inSentence": "**Controls, three, all bite:** ``` the dead block restored FAIL only @lavamoat/allow-scripts reads it, and it is not installed a new install script FAIL runs code at install time and nobody has writte"
+    },
+    {
+      "entry": 53,
+      "tick": 50,
+      "mode": "corrupted-escape",
+      "matched": "escape",
+      "inSentence": "Hover still previews, a click pins, a second click lets go, arrows walk the sentence, Escape releases."
+    },
+    {
+      "entry": 57,
+      "tick": 54,
+      "mode": "corrupted-escape",
+      "matched": "heredoc",
+      "inSentence": "``` ok 9 tokens match STYLEGUIDE.md exactly ok the scale is hue 235, 170 degrees from flame, and CSS and canvas agree ok flame appears only on the answer, the leader and the focus ring ok Manrope is d"
+    },
+    {
+      "entry": 66,
+      "tick": 63,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "It asks whether the port answers, and a stale server from an hour ago answers beautifully."
+    },
+    {
+      "entry": 73,
+      "tick": 70,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "**Next tick:** T66, the six stale latency numbers in two comments that contradict `meta.json`."
+    },
+    {
+      "entry": 74,
+      "tick": 71,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "`docs/PUBLISH.md` was written before the push with the description, the ten topics and the link line, and the description deliberately carries no number, because a description lives where `npm run bui"
+    },
+    {
+      "entry": 79,
+      "tick": 76,
+      "mode": "corrupted-escape",
+      "matched": "escape",
+      "inSentence": "Arabic, a zero width space, an LRM, a NUL, an ANSI escape, the Greek flag, a four person family emoji, U+FFFD and two hundred stacked combining acutes: answered, console empty, horizontal overflow exa"
+    },
+    {
+      "entry": 80,
+      "tick": 77,
+      "mode": "orphaned-process",
+      "matched": "leaked",
+      "inSentence": "It also removes `aria-valuemin` and `aria-valuemax`, which the original missed **on the success path as well**: the audit found two leaked attributes and there were four."
+    },
+    {
+      "entry": 88,
+      "tick": 85,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "## Tick 85, 2026-09-23 13:40, build day, ladder item 5 **WM-F8, F13 and F15, the oldest open medium, and this time it was not stale.** Both published pages live and green, no open highs, `chunkline`'s"
+    },
+    {
+      "entry": 89,
+      "tick": 86,
+      "mode": "masked-exit",
+      "matched": "exit code",
+      "inSentence": "**And a piped build hid its reason for the third time today.** The first control attempt reported a failed build and I read the exit code without the message: `check:counts` was red because registerin"
+    },
+    {
+      "entry": 90,
+      "tick": 87,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "**A fourth wasted control today, and a new reason.** The first attempt reported a failed build I did not read: my own new gate code had a type error, `codePointAt(0)` possibly undefined, so `dist` was"
+    },
+    {
+      "entry": 98,
+      "tick": 95,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "It was told the four defects this workspace keeps producing, so it knows what to hunt: a gate that passes for the wrong reason, a number no command produces, a picture gone stale, an assertion measuri"
+    },
+    {
+      "entry": 99,
+      "tick": 96,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "Each of the three ways they can disagree has happened to a project here: a page that draws the committed answer and stops measuring, a page that measures while the file goes stale, and both being righ"
+    },
+    {
+      "entry": 101,
+      "tick": 97,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "I only ever measured a cold visit, so I traded one wrong number for another and wrote a comment claiming \"nothing is stored, so nothing can go stale\"."
+    },
+    {
+      "entry": 105,
+      "tick": 101,
+      "mode": "green-control",
+      "matched": "gate was wrong first",
+      "inSentence": "**The page gate was wrong first, in this repository's favourite way.** It held the page to the README's spelling, `1.80x`, against a page that correctly says \"1.8 times\"."
+    },
+    {
+      "entry": 105,
+      "tick": 101,
+      "mode": "stale-record",
+      "matched": "drifted",
+      "inSentence": "It holds `corpus.json` to `corpus-text.json` and never opens the page or the README, so every rendered figure could have drifted with it green."
+    },
+    {
+      "entry": 106,
+      "tick": 102,
+      "mode": "masked-exit",
+      "matched": "exit code",
+      "inSentence": "**Controls, each with the build's exit code checked first.** `chunkline`: the flame to `#00c2ff` fails on `paint.--flame`; the headline replaced fails on `words.headline`; `draw(lang, cuts.slice(0, -1"
+    },
+    {
+      "entry": 106,
+      "tick": 102,
+      "mode": "stale-record",
+      "matched": "stale",
+      "inSentence": "**Killed:** the hypothesis the sweep started from, that `tokenlab`'s picture was already stale like `watch-it-think`'s had been."
+    },
+    {
+      "entry": 108,
+      "tick": 104,
+      "mode": "masked-exit",
+      "matched": "exit code",
+      "inSentence": "**Six modes, derived rather than invented**, each admitted only with a mechanism, two independent occurrences, and at least one entry carrying pasted output or a commit: | mode | entries | with a run "
+    }
+  ]
+}

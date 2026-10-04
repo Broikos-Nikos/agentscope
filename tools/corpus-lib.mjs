@@ -124,16 +124,36 @@ export function entriesOf(text) {
   return out
 }
 
-/** Everything the page and the README are allowed to say, computed once. */
-export function extract(text) {
+/**
+ * Everything the page and the README are allowed to say, computed once.
+ *
+ * ## The count comes from the labels, not from the phrases
+ *
+ * `AME-F1`. Until tick 191 a mode was recorded whenever one of its phrases
+ * appeared anywhere in an entry, and the page said an agent "wrote down six
+ * failures 43 times". Read by hand over all 108 entries, 22 of those 54 records
+ * are the word used in another sense: the Escape key, a byte order mark in
+ * pasted input, "this time it was not stale", a hypothetical, a quotation of
+ * the taxonomy itself. Measured at tick 191:
+ *
+ *     matcher   54 records across 43 entries
+ *     by hand   32 records across 25 entries
+ *     25 of the matcher's hits rejected, 3 of the real ones it never found
+ *
+ * So `data/labels.json` is the count and this is the candidate finder. The
+ * phrases still do the searching, which is what they are good at, and a human
+ * decision about each candidate is what gets published. The gate
+ * `check:labels` holds every label's sentence to its entry, so the file cannot
+ * drift from the log it describes, and holds every candidate to being either
+ * labelled or rejected, so nothing is quietly dropped.
+ */
+export function extract(text, labels) {
   const all = entriesOf(text)
   const lower = all.map((e) => e.body.toLowerCase())
+  if (!labels) throw new Error('extract needs data/labels.json: the count is the hand labels, not the phrase hits')
 
   const modes = MODES.map((mode) => {
-    const idx = []
-    for (let i = 0; i < all.length; i++) {
-      if (mode.any.some((p) => lower[i].includes(p.toLowerCase()))) idx.push(i)
-    }
+    const idx = labels.records.filter((r) => r.mode === mode.id).map((r) => r.entry - 1)
     const runs = idx.filter((i) => replayable(all[i].body))
     return {
       id: mode.id,
@@ -146,6 +166,15 @@ export function extract(text) {
       // summary of it. This is what "replayable" has to mean here.
       at: idx,
       runsAt: runs,
+      /* What the phrases found and the reading threw out, so the page can say
+         how much of the search was noise rather than only its own total. */
+      candidates: (() => {
+        const hits = []
+        for (let i = 0; i < all.length; i++) {
+          if (mode.any.some((p) => lower[i].includes(p.toLowerCase()))) hits.push(i)
+        }
+        return hits.length
+      })(),
     }
   }).sort((a, b) => b.entries - a.entries)
 
@@ -173,17 +202,12 @@ export function extract(text) {
    * agent's own log you have to keep before its recurrences become visible at
    * all, which is a thing somebody starting one today can act on.
    */
-  const bar = (n) => {
-    const sub = all.slice(0, n)
-    const subLower = sub.map((e) => e.body.toLowerCase())
-    return MODES.filter((mode) => {
-      let runs = 0
-      for (let i = 0; i < sub.length; i++) {
-        if (mode.any.some((p) => subLower[i].includes(p.toLowerCase())) && replayable(sub[i].body)) runs++
-      }
-      return runs >= 2
-    }).length
-  }
+  const bar = (n) =>
+    MODES.filter(
+      (mode) =>
+        labels.records.filter((r) => r.mode === mode.id && r.entry <= n && replayable(all[r.entry - 1].body))
+          .length >= 2,
+    ).length
   let allModesFrom = null
   for (let n = 1; n <= all.length; n++) {
     if (bar(n) === MODES.length) {
@@ -209,6 +233,9 @@ export function extract(text) {
       firstDate: all.map((e) => e.date).filter(Boolean).sort()[0] ?? null,
       lastDate: all.map((e) => e.date).filter(Boolean).sort().at(-1) ?? null,
       entriesTouchingAnyMode: touching,
+      /* The headline counts records: "wrote down six failures N times" is about
+         how many times it wrote one down, and 6 of the 25 entries carry two. */
+      records: labels.records.length,
       modesWithTwoOrMoreRuns: modes.filter((m) => m.replayable >= 2).length,
       // The smallest number of entries at which every mode clears two runs.
       // Null would mean the taxonomy does not hold even on the whole corpus.

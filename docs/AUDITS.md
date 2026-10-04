@@ -5,7 +5,7 @@ Commit messages cite identifiers like `AGLIC-F1`. This is what they refer to.
 Three audit passes and the workspace sweeps. The passes were run by a separate
 agent against one assigned perspective, with no write access to this project.
 
-**22 findings, 5 closed, 17 open**, across the 3 perspectives that produced them.
+**23 findings, 8 closed, 15 open**, across the 3 perspectives that produced them.
 
 Held to the workspace queue this project is built from by
 `tools/check-audit-status.mjs`, which fails if a row here says anything the
@@ -17,12 +17,12 @@ The measurement auditor: is every number reproducible, is the sample size stated
 is any comparison unfair. Filed 2026-09-26, with an appendix of hand labels for
 all 108 entries added the same morning at this session's request.
 
-5 findings, 0 closed.
+5 findings, 2 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
-| `AME-F1` | high | open | Nearly half the mode records are a word used in another sense |
-| `AME-F2` | high | open | "All six clear the bar only from entry 80" is decided by a false positive and a byte count |
+| `AME-F1` | high | fixed, tick 191 | Nearly half the mode records are a word used in another sense |
+| `AME-F2` | high | fixed, tick 191 | "All six clear the bar only from entry 80" is decided by a false positive and a byte count |
 | `AME-F3` | medium | open | "With a run" is true of 85 of 108 entries and is not tied to the mode |
 | `AME-F4` | medium | open | "108 entries across 107 ticks, to tick 104" |
 | `AME-F5` | low | open | The claims gate holds the table and the headline, not the prose around them |
@@ -61,7 +61,7 @@ Not a perspective and not an agent. Findings raised against this project while
 a class found somewhere else in the workspace was being swept across all eight,
 kept here because commit messages cite them like any other.
 
-9 findings, 5 closed.
+10 findings, 6 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
@@ -73,4 +73,5 @@ kept here because commit messages cite them like any other.
 | `ASIZE-F1` | medium | open | The README says the entry text is 319 KB and the file is 326 KB, and nothing measures it |
 | `APRE-F2` | medium | fixed, tick 173 | Picking a mode rebuilt every mark on the page to change three attributes and one sentence |
 | `AGIF-F1` | low | open | The loop runs 6.88 seconds, above the five and a half tokenlab settled on |
+| `ALAB-F1` | low | fixed, tick 191 | The page headline and the README counted different things and nothing compared them |
 | `APRE-F1` | low | fixed, tick 165 | npm run verify started a server and handed the same missing browser to every gate in turn |

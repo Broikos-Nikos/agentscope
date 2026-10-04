@@ -14,7 +14,7 @@ import corpus from './generated/corpus.json'
  * the drawing:
  *
  * **Six rows, not one.** The first design was one mark per entry, coloured by
- * its mode. 7 of the 43 entries that carry a mode carry two or more, so 16% of
+ * its mode. 6 of the 25 entries that carry a mode carry two or more, so 24% of
  * the coloured marks would have been showing one of several answers and no
  * reader could have known which. A row per mode says the true thing and makes
  * the recurrence clusters, which are the entire argument, legible at a glance.
@@ -209,7 +209,7 @@ function render(): void {
 
 function boot(): void {
   el.headline.textContent =
-    `An agent wrote down six failures ${totals.entriesTouchingAnyMode} times in ${entries.length} entries, and kept making them.`
+    `An agent wrote down six failures ${totals.records} times in ${entries.length} entries, and kept making them.`
 
   el.standfirst.textContent =
     `${entries.length} entries across ${totals.ticks} ticks, to tick ${totals.highestTick}, ` +
