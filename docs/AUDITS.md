@@ -5,7 +5,7 @@ Commit messages cite identifiers like `AGLIC-F1`. This is what they refer to.
 Three audit passes and the workspace sweeps. The passes were run by a separate
 agent against one assigned perspective, with no write access to this project.
 
-**24 findings, 12 closed, 12 open**, across the 3 perspectives that produced them.
+**25 findings, 13 closed, 12 open**, across the 3 perspectives that produced them.
 
 Held to the workspace queue this project is built from by
 `tools/check-audit-status.mjs`, which fails if a row here says anything the
@@ -61,10 +61,11 @@ Not a perspective and not an agent. Findings raised against this project while
 a class found somewhere else in the workspace was being swept across all eight,
 kept here because commit messages cite them like any other.
 
-11 findings, 7 closed.
+12 findings, 8 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
+| `AREL-F1` | high | fixed, tick 195 | The project due to publish had neither a Pages workflow nor a publish document |
 | `ACAP-F1` | medium | open | capture.mjs hands the committed GIF to ffmpeg and closes its browser outside a finally |
 | `ACON-F1` | medium | fixed, tick 176 | Six mode buttons are bounded at 1.27:1 |
 | `AGLIC-F1` | medium | fixed, tick 118 | The README claims MIT and the repository carries no LICENSE file and no gate holding the claim |
