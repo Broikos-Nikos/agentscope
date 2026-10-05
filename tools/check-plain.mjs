@@ -88,7 +88,7 @@ try {
   ]) {
     const page = await browser.newPage({ viewport: { width: w, height: h } })
     await page.goto(server.url)
-    await page.waitForFunction(() => document.querySelectorAll('.mark').length > 0, null, { timeout: 180_000 })
+    await page.waitForFunction(() => document.querySelectorAll('[data-mark]').length > 0, null, { timeout: 180_000 })
     await page.waitForTimeout(500)
 
     const seen = await page.evaluate(() => {

@@ -77,7 +77,7 @@ try {
   const browser = await chromium.launch()
   const page = await browser.newPage({ viewport: { width: 1400, height: 1200 } })
   await page.goto(server.url, { waitUntil: 'domcontentloaded' })
-  await page.waitForFunction(() => document.querySelectorAll('.mark').length > 0, null, { timeout: 60_000 })
+  await page.waitForFunction(() => document.querySelectorAll('[data-mark]').length > 0, null, { timeout: 60_000 })
 
   const seen = (await page.evaluate(() => document.body.innerText)).replace(/\s+/g, ' ')
 
@@ -100,11 +100,11 @@ try {
    * where the corpus has 53, and the picture is the thing this project is.
    */
   const drawn = await page.evaluate(() =>
-    [...document.querySelectorAll('.row')].map((r) => ({
+    [...document.querySelectorAll('[data-row]')].map((r) => ({
       mode: r.dataset.mode,
-      cols: r.querySelectorAll('.mark').length,
-      on: r.querySelectorAll('.mark--on').length,
-      run: r.querySelectorAll('.mark--run').length,
+      cols: r.querySelectorAll('[data-mark]').length,
+      on: r.querySelectorAll('[data-mark][data-on]').length,
+      run: r.querySelectorAll('[data-mark][data-run]').length,
     })),
   )
 
@@ -133,7 +133,7 @@ try {
   }
 
   const cardText = await page.evaluate(() =>
-    Object.fromEntries([...document.querySelectorAll('.mode')].map((b) => [b.dataset.mode, b.innerText.replace(/\s+/g, ' ')])),
+    Object.fromEntries([...document.querySelectorAll('[data-mode-button]')].map((b) => [b.dataset.mode, b.innerText.replace(/\s+/g, ' ')])),
   )
   const badCards = CARDS.filter(([id, want]) => !(cardText[id] ?? '').includes(want))
   if (badCards.length > 0) {
@@ -171,17 +171,17 @@ try {
         n.__mark = i
       })
     }
-    const mode = document.querySelector('.mode')
+    const mode = document.querySelector('[data-mode-button]')
     mode.click()
     await new Promise((r) => requestAnimationFrame(r))
     const kept = (sel) => [...document.querySelectorAll(sel)].filter((n) => n.__mark !== undefined).length
     return {
-      marks: { kept: kept('.mark'), of: document.querySelectorAll('.mark').length },
-      rows: { kept: kept('.row'), of: document.querySelectorAll('.row').length },
-      modes: { kept: kept('.mode'), of: document.querySelectorAll('.mode').length },
-      pressed: document.querySelectorAll('.mode[aria-pressed="true"]').length,
-      dimmed: document.querySelectorAll('.row--dim').length,
-      picked: document.querySelector('.mode')?.getAttribute('aria-pressed'),
+      marks: { kept: kept('.mark'), of: document.querySelectorAll('[data-mark]').length },
+      rows: { kept: kept('.row'), of: document.querySelectorAll('[data-row]').length },
+      modes: { kept: kept('.mode'), of: document.querySelectorAll('[data-mode-button]').length },
+      pressed: document.querySelectorAll('[data-mode-button][aria-pressed="true"]').length,
+      dimmed: document.querySelectorAll('[data-row][data-dim]').length,
+      picked: document.querySelector('[data-mode-button]')?.getAttribute('aria-pressed'),
     }
   })
 

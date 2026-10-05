@@ -74,7 +74,7 @@ try {
   const browser = await chromium.launch()
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } })
   await page.goto(server.url, { waitUntil: 'domcontentloaded' })
-  await page.waitForFunction(() => document.querySelectorAll('.mark').length > 0, null, { timeout: 60_000 })
+  await page.waitForFunction(() => document.querySelectorAll('[data-mark]').length > 0, null, { timeout: 60_000 })
 
   /*
    * Drive the page to the state the camera was pointed at. Comparing the
@@ -83,7 +83,7 @@ try {
    * be ignored to be used.
    */
   await page.click(`.mode[data-mode="${FINAL_MODE}"]`)
-  const marks = page.locator(`.row[data-mode="${FINAL_MODE}"] .mark--run`)
+  const marks = page.locator(`[data-row][data-mode="${FINAL_MODE}"] .mark--run`)
   const n = await marks.count()
   if (n > 0) await marks.nth(n - 1).click()
 

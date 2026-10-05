@@ -68,12 +68,12 @@ try {
   ]) {
     const page = await browser.newPage({ viewport: { width: w, height: h } })
     await page.goto(server.url)
-    await page.waitForFunction(() => document.querySelectorAll('.mode').length > 0, null, { timeout: 180_000 })
-    await page.locator('.mode').first().click()
+    await page.waitForFunction(() => document.querySelectorAll('[data-mode-button]').length > 0, null, { timeout: 180_000 })
+    await page.locator('[data-mode-button]').first().click()
     await page.waitForTimeout(400)
 
     const seen = await page.evaluate(() => {
-      const picks = [...document.querySelectorAll('.pick')]
+      const picks = [...document.querySelectorAll('[data-pick]')]
       const boxes = picks.map((p) => p.getBoundingClientRect())
       return {
         picks: picks.length,
@@ -82,7 +82,7 @@ try {
         stops: document.querySelectorAll(
           'a[href], button:not([tabindex="-1"]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
         ).length,
-        markWidth: +(document.querySelector('.mark')?.getBoundingClientRect().width ?? 0).toFixed(2),
+        markWidth: +(document.querySelector('[data-mark]')?.getBoundingClientRect().width ?? 0).toFixed(2),
       }
     })
 
@@ -114,13 +114,13 @@ try {
   /* The list is the mode's own records, and each row opens what it names. */
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } })
   await page.goto(server.url)
-  await page.waitForFunction(() => document.querySelectorAll('.mode').length > 0, null, { timeout: 180_000 })
+  await page.waitForFunction(() => document.querySelectorAll('[data-mode-button]').length > 0, null, { timeout: 180_000 })
 
   for (const mode of corpus.modes.slice(0, 3)) {
     await page.click(`.mode[data-mode="${mode.id}"]`)
     await page.waitForTimeout(300)
     const rows = await page.evaluate(() =>
-      [...document.querySelectorAll('.pick')].map((p) => ({
+      [...document.querySelectorAll('[data-pick]')].map((p) => ({
         at: Number(p.dataset.pick),
         text: p.textContent?.replace(/\s+/g, ' ').trim().slice(0, 40) ?? '',
       })),
@@ -140,7 +140,7 @@ try {
   /* And opening one puts the reader in it. */
   await page.click('.mode')
   await page.waitForTimeout(300)
-  await page.locator('.pick').first().click()
+  await page.locator('[data-pick]').first().click()
   await page.waitForTimeout(1200)
   const landed = await page.evaluate(() => {
     const panel = document.querySelector('article[data-entry]')

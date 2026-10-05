@@ -83,6 +83,7 @@ function drawModes(): void {
       const b = document.createElement('button')
       b.type = 'button'
       b.className = 'mode'
+      b.dataset.modeButton = ''
       b.dataset.mode = m.id
       b.setAttribute('aria-pressed', String(selected === m.id))
       b.innerHTML = ''
@@ -108,6 +109,7 @@ function drawGrid(): void {
   const rows = modes.map((m) => {
     const row = document.createElement('div')
     row.className = 'row'
+    row.dataset.row = ''
     row.dataset.mode = m.id
 
     const label = document.createElement('div')
@@ -127,6 +129,7 @@ function drawGrid(): void {
       const mark = document.createElement('button')
       mark.type = 'button'
       mark.className = 'mark'
+      mark.dataset.mark = ''
       /*
        * Out of the tab order, and the list below is the way in.
        *
@@ -138,7 +141,11 @@ function drawGrid(): void {
        * is for, at most ten stops instead of 648.
        */
       mark.tabIndex = -1
-      if (carries.has(i)) mark.classList.add(hasRun.has(i) ? 'mark--run' : 'mark--on')
+      if (carries.has(i)) {
+        mark.classList.add(hasRun.has(i) ? 'mark--run' : 'mark--on')
+        mark.toggleAttribute('data-run', hasRun.has(i))
+        mark.toggleAttribute('data-on', !hasRun.has(i))
+      }
       const e = entries[i]
       mark.title = `${e.tick === null ? 'no tick' : `tick ${e.tick}`}: ${e.heading}`
       mark.setAttribute(
@@ -274,6 +281,7 @@ function markSelected(): void {
   }
   for (const row of el.grid.querySelectorAll<HTMLElement>('.row')) {
     row.classList.toggle('row--dim', Boolean(selected) && row.dataset.mode !== selected)
+    row.toggleAttribute('data-dim', Boolean(selected) && row.dataset.mode !== selected)
   }
   drawPicks()
   el.status.textContent = selected
