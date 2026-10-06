@@ -5,7 +5,7 @@ Commit messages cite identifiers like `AGLIC-F1`. This is what they refer to.
 Three audit passes and the workspace sweeps. The passes were run by a separate
 agent against one assigned perspective, with no write access to this project.
 
-**25 findings, 13 closed, 12 open**, across the 3 perspectives that produced them.
+**26 findings, 13 closed, 13 open**, across the 3 perspectives that produced them.
 
 Held to the workspace queue this project is built from by
 `tools/check-audit-status.mjs`, which fails if a row here says anything the
@@ -61,7 +61,7 @@ Not a perspective and not an agent. Findings raised against this project while
 a class found somewhere else in the workspace was being swept across all eight,
 kept here because commit messages cite them like any other.
 
-12 findings, 8 closed.
+13 findings, 8 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
@@ -77,3 +77,4 @@ kept here because commit messages cite them like any other.
 | `ALAB-F1` | low | fixed, tick 191 | The page headline and the README counted different things and nothing compared them |
 | `APRE-F1` | low | fixed, tick 165 | npm run verify started a server and handed the same missing browser to every gate in turn |
 | `AREACH-F1` | low | fixed, tick 193 | The new list put data-entry on every row, which is the entry panel own hook |
+| `AFF-F1` | low | open | npm run capture resolves ffmpeg off PATH and asks for it only after the browser has launched |
