@@ -14,6 +14,8 @@ That is the real page in a real browser, recorded by `npm run capture`. The mark
 it opens at the end is tick 104, in which a gate written to catch a control that
 passes against broken code was itself passed by a control against a broken spec.
 
+`npm run capture`, which makes the recording at the top of this file, needs one program npm does not install: **ffmpeg**. Install it (`winget install Gyan.FFmpeg`, `brew install ffmpeg`, `apt install ffmpeg`). Nothing else here needs it and the page does not.
+
 ---
 
 ## The number, and the condition it comes with
