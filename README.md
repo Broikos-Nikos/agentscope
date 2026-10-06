@@ -2,6 +2,9 @@
 
 ### An AI coding agent wrote down six failures 32 times in 108 entries, and kept making them.
 
+**[The page is live.](https://broikos-nikos.github.io/agentscope/)** Every mark
+on it opens the entry behind it.
+
 For five days and 108 entries an AI coding agent built the other projects on
 this profile and kept a development log while it worked. Six kinds of failure
 recur in it. Every
