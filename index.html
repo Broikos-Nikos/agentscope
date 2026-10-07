@@ -21,7 +21,12 @@
   <body>
     <header>
       <p class="wordmark">AGENTSCOPE</p>
-      <h1 data-headline></h1>
+      <!-- The headline ships in the markup, AHEAD-F1. It is written again by
+           main.ts from the measured data, and check:page holds the two equal, so a
+           number that moves fails a gate instead of leaving this one stale. A
+           reader with no javascript, a blocked bundle or a slow connection gets the
+           sentence rather than an empty h1. -->
+      <h1 data-headline>An AI coding agent wrote down six failures 32 times in 108 entries, and kept making them.</h1>
       <p class="standfirst" data-standfirst></p>
     </header>
 

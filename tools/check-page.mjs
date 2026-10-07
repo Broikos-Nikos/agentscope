@@ -166,6 +166,7 @@ try {
    * how a click lands on a different mark than the one it was aimed at.
    */
   const reuse = await page.evaluate(async () => {
+
     for (const sel of ['.mark', '.row', '.mode']) {
       document.querySelectorAll(sel).forEach((n, i) => {
         n.__mark = i
