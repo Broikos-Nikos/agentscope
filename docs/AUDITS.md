@@ -5,7 +5,7 @@ Commit messages cite identifiers like `AGLIC-F1`. This is what they refer to.
 Three audit passes and the workspace sweeps. The passes were run by a separate
 agent against one assigned perspective, with no write access to this project.
 
-**27 findings, 16 closed, 11 open**, across the 3 perspectives that produced them.
+**27 findings, 17 closed, 10 open**, across the 3 perspectives that produced them.
 
 Held to the workspace queue this project is built from by
 `tools/check-audit-status.mjs`, which fails if a row here says anything the
@@ -61,7 +61,7 @@ Not a perspective and not an agent. Findings raised against this project while
 a class found somewhere else in the workspace was being swept across all eight,
 kept here because commit messages cite them like any other.
 
-14 findings, 11 closed.
+14 findings, 12 closed.
 
 | id | severity | status | finding |
 |---|---|---|---|
@@ -71,7 +71,7 @@ kept here because commit messages cite them like any other.
 | `AGLIC-F1` | medium | fixed, tick 118 | The README claims MIT and the repository carries no LICENSE file and no gate holding the claim |
 | `AGRP-F1` | medium | fixed, tick 182 | serve.mjs kills a process group the spawn never creates, so cleanup off Windows leaves the server running |
 | `AHEAD-F1` | medium | fixed, tick 224 | The h1 ships empty and is written by script, so a slow or blocked load has no headline at all |
-| `ASIZE-F1` | medium | open | The README says the entry text is 319 KB and the file is 326 KB, and nothing measures it |
+| `ASIZE-F1` | medium | fixed, tick 227 | The README says the entry text is 319 KB and the file is 326 KB, and nothing measures it |
 | `APRE-F2` | medium | fixed, tick 173 | Picking a mode rebuilt every mark on the page to change three attributes and one sentence |
 | `AGIF-F1` | low | open | The loop runs 6.88 seconds, above the five and a half tokenlab settled on |
 | `ALAB-F1` | low | fixed, tick 191 | The page headline and the README counted different things and nothing compared them |
