@@ -17,6 +17,30 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23080604'/%3E%3Cg fill='%239a8f88'%3E%3Crect x='2' y='3' width='2' height='2'/%3E%3Crect x='7' y='3' width='2' height='2'/%3E%3Crect x='2' y='7' width='2' height='2'/%3E%3Crect x='11' y='7' width='2' height='2'/%3E%3Crect x='7' y='11' width='2' height='2'/%3E%3C/g%3E%3Crect x='11' y='11' width='2' height='2' fill='%23ff6a00'/%3E%3C/svg%3E"
     />
     <title>agentscope</title>
+    <!--
+      The card a pasted link unfurls into. `tokenlab` RC-F11 was fixed in
+      `tokenlab` alone on 2026-09-24, and the sweep at tick 229 asked the same
+      question of the other seven with curl, which is what an unfurler sees
+      because none of these pages are rendered by a service running JavaScript:
+      six of the seven published pages carried none of the nine tags and handed
+      Slack, a mail client or LinkedIn a bare link.
+
+      `card.png` is in `public/` because that is what ships: `docs/` is in the
+      repository and not on the site, so an og:image pointing there unfurls into
+      a 404. The URL is absolute because a relative one is resolved against the
+      service's own domain rather than this page's. `npm run card` takes it at
+      1200 by 630, the size these services crop to, and records what was on
+      screen in `docs/card.json`, which is where the `theme-color` below comes from.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://broikos-nikos.github.io/agentscope/" />
+    <meta property="og:title" content="An AI coding agent wrote down six failures 32 times in 108 entries, and kept making them." />
+    <meta property="og:description" content="An AI coding agent kept a development log for five days and 108 entries while it built six other projects. Six kinds of failure recur in it, every one with a run behind it, and it wrote each one down as a lesson before making it again." />
+    <meta property="og:image" content="https://broikos-nikos.github.io/agentscope/card.png" />
+    <meta property="og:image:alt" content="The first screen of the agentscope page, headed: An AI coding agent wrote down six failures 32 times in 108 entries, and kept making them" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://broikos-nikos.github.io/agentscope/card.png" />
+    <meta name="theme-color" content="#080604" />
   </head>
   <body>
     <header>
